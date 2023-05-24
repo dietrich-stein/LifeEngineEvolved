@@ -34,6 +34,7 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "dat.gui": "^0.7.9",
     "jquery": "^3.6.1"
   }
 }
