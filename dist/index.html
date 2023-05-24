@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<script src="./js/bundle.js"></script>
-		
+
 		<div id='env'>
 			<canvas id='env-canvas'></canvas>
 		</div>
@@ -105,7 +105,7 @@
 							<button class='randomize-button' id='generate-random' title="Randomizes organism"><i class="fa fa-random"></i></button>
 							<br>
 						</div>
-						
+
 					</div>
 					<div class='right-half'>
 						<div id='organism-details' style="display:none;">
@@ -114,7 +114,7 @@
 							<p id='move-range'>Move Range: </p>
 							<p id='mutation-rate'>Mutation Rate: </p>
 							<br>
-						
+
 							<div class='brain-details'>
 								<h4>Brain</h4>
 								<p class='chase-types'>Move Towards: food</p>
@@ -158,7 +158,7 @@
 								<p class='retreat-types'>Move Away From: killer</p>
 							</div>
 						</div>
-						
+
 						<button id='reset-with-editor-org' title='Reset the environment with the organism in the editor'>Reset with Editor Organism</button>
 					</div>
 				</div>
@@ -181,7 +181,7 @@
 						<input type="checkbox" id="auto-reset" checked>
 						<p id='reset-count'>Auto reset count: </p>
 						<label for="auto-pause" title='Will override reset on extinction'>Pause on total extinction</label>
-						<input type="checkbox" id="auto-pause">
+						<input type="checkbox" id="auto-pause" checked>
 						<br>
 						<button class='randomize-button reset-random' title="Generate many random organisms in the world.">Reset with Random Organisms</button>
 						<label for="num-random-orgs" title='Number of random organisms to generate'>Num to generate:</label>
@@ -231,7 +231,7 @@
 						<label for="extra-mover-cost" title='Additional food cost for movers to reproduce'>Extra mover reproduction cost:</label>
 						<input type="number" id="extra-mover-cost" value=0 max="1000" step="1">
 
-						
+
 					</div>
 					<div class='right-half'>
 						<button id='reset-rules'>Reset all controls</button>
@@ -327,6 +327,6 @@
 		<div id='maximize-hot-control' class='hot-controls'>
 			<button id="maximize" title="Show Control Panel."><i class="fa fa-plus-square"></i></button>
 		</div>
-		
+
 	</body>
 </html>

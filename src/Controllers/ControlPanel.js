@@ -7,6 +7,7 @@ import LoadController from './LoadController';
 class ControlPanel {
     constructor(engine) {
         this.engine = engine;
+
         this.defineMinMaxControls();
         this.defineHotkeys();
         this.defineEngineSpeedControls();
@@ -25,6 +26,7 @@ class ControlPanel {
         this.opacity_change_rate = -0.8;
         this.paused = false;
         this.setHyperparamDefaults();
+
         LoadController.control_panel = this;
     }
 
