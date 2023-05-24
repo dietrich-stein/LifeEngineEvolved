@@ -2,13 +2,22 @@ import WorldEnvironment from './Environments/WorldEnvironment';
 import ControlPanel from './Controllers/ControlPanel';
 import OrganismEditor from './Environments/OrganismEditor';
 import ColorScheme from './Rendering/ColorScheme';
+import { GUI } from 'dat.gui';
 
+const gui = new GUI();
 // If the simulation speed is below this value, a new interval will be created to handle ui rendering
 // at a reasonable speed. If it is above, the simulation interval will be used to update the ui.
 const min_render_speed = 60;
 
 class Engine {
   constructor() {
+    // https://github.com/dataarts/dat.gui/blob/master/API.md
+    this.gui = new dat.GUI({
+      name: "My GUI",
+      autoPlace: true
+    });
+    this.setGUI();
+
     this.fps = 60;
     this.env = new WorldEnvironment(5);
     this.organism_editor = new OrganismEditor();
@@ -25,6 +34,12 @@ class Engine {
 
     this.actual_fps = 0;
     this.running = false;
+  }
+
+  setGUI() {
+    const folder1 = this.gui.addFolder('Flow Field');
+    folder1.open();
+    gui.show();
   }
 
   start(fps = 60) {
