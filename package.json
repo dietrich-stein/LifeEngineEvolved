@@ -25,6 +25,7 @@
   "homepage": "https://github.com/MaxRobinsonTheGreat/EvolutionSimulatorV2#readme",
   "devDependencies": {
     "@types/jquery": "^3.5.16",
+    "eslint": "^8.41.0",
     "http-server": "^14.1.1",
     "prettier": "^2.8.8",
     "ts-loader": "^9.4.2",
