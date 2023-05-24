@@ -1,46 +1,46 @@
 [
-    {
-        "name": "Purple Flower",
-        "value": "purple_flower"
-    },
-    {
-        "name": "Rosa Finalis",
-        "value": "RosaFinalis"
-    },
-    {
-        "name": "Quadratus Anxius",
-        "value": "The_Anxious_Square"
-    },
-    {
-        "name": "Hunter",
-        "value": "hunter"
-    },
-    {
-        "name": "Small Bush Killer",
-        "value": "smallbushkiller"
-    },
-    {
-        "name": "Fly Catcher",
-        "value": "flycatcher"
-    },
-    {
-        "name": "Heart Locket",
-        "value": "HeartLocket"
-    },
-    {
-        "name": "Napoleon",
-        "value": "Napoleon"
-    },
-    {
-        "name": "NED",
-        "value": "NED"
-    },
-    {
-        "name": "Spinner",
-        "value": "spinner"
-    },
-    {
-        "name": "Sword",
-        "value": "sword"
-    }
+  {
+    "name": "Purple Flower",
+    "value": "purple_flower"
+  },
+  {
+    "name": "Rosa Finalis",
+    "value": "RosaFinalis"
+  },
+  {
+    "name": "Quadratus Anxius",
+    "value": "The_Anxious_Square"
+  },
+  {
+    "name": "Hunter",
+    "value": "hunter"
+  },
+  {
+    "name": "Small Bush Killer",
+    "value": "smallbushkiller"
+  },
+  {
+    "name": "Fly Catcher",
+    "value": "flycatcher"
+  },
+  {
+    "name": "Heart Locket",
+    "value": "HeartLocket"
+  },
+  {
+    "name": "Napoleon",
+    "value": "Napoleon"
+  },
+  {
+    "name": "NED",
+    "value": "NED"
+  },
+  {
+    "name": "Spinner",
+    "value": "spinner"
+  },
+  {
+    "name": "Sword",
+    "value": "sword"
+  }
 ]
