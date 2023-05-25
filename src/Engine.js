@@ -36,30 +36,41 @@ class Engine {
     this.setGUI();
   }
 
+  handleGridSettingChanged(val) {
+    if (this.env.fill_window) {
+      if (this.env.resetForWindow(this.env.cell_size)) {
+        this.controlpanel.stats_panel.reset();
+      } else {
+        // restore original value if prompt is denied
+        this.env.cell_size = this.env.renderer.cell_size;
+      }
+    } else {
+      if (this.env.resetForSize(
+        this.env.cell_size,
+        this.env.num_cols,
+        this.env.num_rows
+      )) {
+        this.controlpanel.stats_panel.reset();
+      } else {
+        // restore original value if prompt is denied
+        this.env.cell_size = this.env.renderer.cell_size;
+      }
+    }
+    this.gui.updateDisplay();
+  }
+
   setGUI() {
+    // WORLD
     const folderWorld = this.gui.addFolder("World");
     folderWorld
+      .add(this.env, 'fill_window')
+      .onFinishChange(this.handleGridSettingChanged.bind(this));
+    folderWorld
       .add(this.env, 'cell_size', 1, 100, 1)
-      .onFinishChange((val) => {
-        if (this.env.fill_window) {
-          if (this.env.resetForWindow(val)) {
-            this.controlpanel.stats_panel.reset();
-          } else {
-            // restore original value if prompt is denied
-            this.env.cell_size = this.env.renderer.cell_size;
-          }
-        } else {
-          if (this.env.resetForSize(val, this.env.num_cols, this.env.num_rows)) {
-            this.controlpanel.stats_panel.reset();
-          } else {
-            // restore original value if prompt is denied
-            this.env.cell_size = this.env.renderer.cell_size;
-          }
-        }
-        this.gui.updateDisplay();
-      });
+      .onFinishChange(this.handleGridSettingChanged.bind(this));
     folderWorld.open();
 
+    // COLOR SCHEME
     const folderColorScheme = this.gui.addFolder("Color Scheme");
     // non-living
     folderColorScheme
