@@ -37,7 +37,7 @@ class Organism {
       //deep copy parent cells
       this.anatomy.addInheritCell(c);
     }
-    if (parent.anatomy.has_mover && parent.anatomy.has_eyes) {
+    if (parent.anatomy.has_mover && parent.anatomy.has_eye) {
       this.brain.copy(parent.brain);
     }
   }
@@ -78,7 +78,7 @@ class Organism {
     var mutated = false;
     if (Math.random() * 100 <= prob) {
       if (org.anatomy.has_mover && Math.random() * 100 <= 10) {
-        if (org.anatomy.has_eyes) {
+        if (org.anatomy.has_eye) {
           org.brain.mutate();
         }
         org.move_range += Math.floor(Math.random() * 4) - 2;
@@ -347,7 +347,7 @@ class Organism {
   serialize() {
     let org = SerializeHelper.copyNonObjects(this);
     org.anatomy = this.anatomy.serialize();
-    if (this.anatomy.has_mover && this.anatomy.has_eyes)
+    if (this.anatomy.has_mover && this.anatomy.has_eye)
       org.brain = this.brain.serialize();
     org.species_name = this.species.name;
     return org;

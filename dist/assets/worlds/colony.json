@@ -1456,7 +1456,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1521,7 +1521,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1586,7 +1586,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1651,7 +1651,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1716,7 +1716,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1781,7 +1781,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1846,7 +1846,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1911,7 +1911,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -1976,7 +1976,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2041,7 +2041,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2106,7 +2106,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2171,7 +2171,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": -1, "state": { "name": "mouth" } },
@@ -2235,7 +2235,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2300,7 +2300,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2365,7 +2365,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2430,7 +2430,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2495,7 +2495,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2560,7 +2560,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2625,7 +2625,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2690,7 +2690,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2755,7 +2755,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2820,7 +2820,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2885,7 +2885,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -2950,7 +2950,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3015,7 +3015,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3080,7 +3080,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3145,7 +3145,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3210,7 +3210,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3275,7 +3275,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3340,7 +3340,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3405,7 +3405,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3470,7 +3470,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3535,7 +3535,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3600,7 +3600,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3664,7 +3664,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3729,7 +3729,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3794,7 +3794,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3859,7 +3859,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3924,7 +3924,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -3989,7 +3989,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4054,7 +4054,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4119,7 +4119,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4184,7 +4184,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4249,7 +4249,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4314,7 +4314,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4379,7 +4379,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4444,7 +4444,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4509,7 +4509,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4574,7 +4574,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4639,7 +4639,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4704,7 +4704,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4769,7 +4769,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4834,7 +4834,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4899,7 +4899,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -4964,7 +4964,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5029,7 +5029,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5094,7 +5094,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5159,7 +5159,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5224,7 +5224,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5289,7 +5289,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5354,7 +5354,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5419,7 +5419,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5484,7 +5484,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5549,7 +5549,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5614,7 +5614,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5679,7 +5679,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5744,7 +5744,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5809,7 +5809,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5874,7 +5874,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -5939,7 +5939,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6004,7 +6004,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6069,7 +6069,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6134,7 +6134,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6199,7 +6199,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6264,7 +6264,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6328,7 +6328,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6393,7 +6393,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6458,7 +6458,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6523,7 +6523,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6588,7 +6588,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6653,7 +6653,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6718,7 +6718,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6783,7 +6783,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6848,7 +6848,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6913,7 +6913,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -6978,7 +6978,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7043,7 +7043,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7108,7 +7108,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7173,7 +7173,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7238,7 +7238,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7303,7 +7303,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7368,7 +7368,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7433,7 +7433,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7498,7 +7498,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7563,7 +7563,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": -1, "state": { "name": "mouth" } },
@@ -7627,7 +7627,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7692,7 +7692,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7757,7 +7757,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7822,7 +7822,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7887,7 +7887,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -7952,7 +7952,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8017,7 +8017,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8082,7 +8082,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8147,7 +8147,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8212,7 +8212,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8277,7 +8277,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8342,7 +8342,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8407,7 +8407,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8472,7 +8472,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8537,7 +8537,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8602,7 +8602,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8667,7 +8667,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8732,7 +8732,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8797,7 +8797,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8862,7 +8862,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8927,7 +8927,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -8992,7 +8992,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9057,7 +9057,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": -1, "state": { "name": "mouth" } },
@@ -9121,7 +9121,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9186,7 +9186,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9251,7 +9251,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9316,7 +9316,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9381,7 +9381,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9446,7 +9446,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9511,7 +9511,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9576,7 +9576,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9641,7 +9641,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9706,7 +9706,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9771,7 +9771,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9836,7 +9836,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9901,7 +9901,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -9966,7 +9966,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10031,7 +10031,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": -1, "state": { "name": "mouth" } },
@@ -10095,7 +10095,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10160,7 +10160,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10224,7 +10224,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10289,7 +10289,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10354,7 +10354,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10414,7 +10414,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10479,7 +10479,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10544,7 +10544,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": -1, "state": { "name": "mouth" } },
@@ -10608,7 +10608,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10673,7 +10673,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10738,7 +10738,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10803,7 +10803,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10868,7 +10868,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10933,7 +10933,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -10998,7 +10998,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11063,7 +11063,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11128,7 +11128,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11193,7 +11193,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11258,7 +11258,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11323,7 +11323,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11388,7 +11388,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11448,7 +11448,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11513,7 +11513,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11578,7 +11578,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11643,7 +11643,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11708,7 +11708,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11773,7 +11773,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11838,7 +11838,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11903,7 +11903,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -11968,7 +11968,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12033,7 +12033,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12098,7 +12098,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12163,7 +12163,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12228,7 +12228,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12292,7 +12292,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12357,7 +12357,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12422,7 +12422,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12487,7 +12487,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12552,7 +12552,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12617,7 +12617,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12682,7 +12682,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12747,7 +12747,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12812,7 +12812,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12877,7 +12877,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -12942,7 +12942,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13007,7 +13007,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13072,7 +13072,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13136,7 +13136,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13201,7 +13201,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13266,7 +13266,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13331,7 +13331,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },
@@ -13396,7 +13396,7 @@
         "birth_distance": 10,
         "has_producer": true,
         "has_mover": true,
-        "has_eyes": true,
+        "has_eye": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
           { "loc_col": -1, "loc_row": 1, "state": { "name": "producer" } },

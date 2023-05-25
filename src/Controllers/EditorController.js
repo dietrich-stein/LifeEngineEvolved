@@ -215,7 +215,7 @@ class EditorController extends CanvasController {
 
   setBrainPanelVisibility() {
     var org = this.env.organism;
-    if (org.anatomy.has_eyes && org.anatomy.has_mover) {
+    if (org.anatomy.has_eye && org.anatomy.has_mover) {
       $('.brain-details').css('display', 'block');
       return true;
     }

@@ -16,7 +16,7 @@
     "birth_distance": 16,
     "has_producer": false,
     "has_mover": true,
-    "has_eyes": true,
+    "has_eye": true,
     "cells": [
       { "loc_col": -7, "loc_row": -6, "state": { "name": "armor" } },
       { "loc_col": 2, "loc_row": 7, "state": { "name": "armor" } },

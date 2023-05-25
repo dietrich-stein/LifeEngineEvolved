@@ -16,7 +16,7 @@
     "birth_distance": 16,
     "has_producer": true,
     "has_mover": true,
-    "has_eyes": true,
+    "has_eye": true,
     "cells": [
       { "loc_col": -1, "loc_row": -1, "state": { "name": "mouth" } },
       { "loc_col": 0, "loc_row": -2, "state": { "name": "mouth" } },

@@ -13,7 +13,7 @@ class Anatomy {
     this.cells = [];
     this.has_producer = false;
     this.has_mover = false;
-    this.has_eyes = false;
+    this.has_eye = false;
   }
 
   canAddCellAt(c, r) {
@@ -32,7 +32,7 @@ class Anatomy {
   }
 
   addRandomizedCell(state, c, r) {
-    if (state == CellStates.eye && !this.has_eyes) {
+    if (state == CellStates.eye && !this.has_eye) {
       this.owner.brain.randomizeDecisions();
     }
     var new_cell = BodyCellFactory.createRandom(this.owner, state, c, r);
@@ -80,11 +80,11 @@ class Anatomy {
   checkTypeChange() {
     this.has_producer = false;
     this.has_mover = false;
-    this.has_eyes = false;
+    this.has_eye = false;
     for (var cell of this.cells) {
       if (cell.state == CellStates.producer) this.has_producer = true;
       if (cell.state == CellStates.mover) this.has_mover = true;
-      if (cell.state == CellStates.eye) this.has_eyes = true;
+      if (cell.state == CellStates.eye) this.has_eye = true;
     }
   }
 

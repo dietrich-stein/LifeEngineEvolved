@@ -16,7 +16,7 @@
     "birth_distance": 10,
     "has_producer": true,
     "has_mover": false,
-    "has_eyes": false,
+    "has_eye": false,
     "cells": [
       { "loc_col": 0, "loc_row": 0, "state": { "name": "producer" } },
       { "loc_col": 1, "loc_row": -1, "state": { "name": "producer" } },
