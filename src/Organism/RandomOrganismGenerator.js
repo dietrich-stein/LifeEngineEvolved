@@ -5,7 +5,7 @@ class RandomOrganismGenerator {
   static generate(env) {
     var center = env.grid_map.getCenter();
     var organism = new Organism(center[0], center[1], env, null);
-    organism.anatomy.addDefaultCell(CellStates.mouth, 0, 0);
+    organism.anatomy.addDefaultCell(CellStates.mouth, 0, 0, true);
 
     var outermostLayer = RandomOrganismGenerator.organismLayers;
     var x, y;
@@ -74,6 +74,7 @@ class RandomOrganismGenerator {
         CellStates.getRandomLivingType(),
         x,
         y,
+        true
       );
       return true;
     }

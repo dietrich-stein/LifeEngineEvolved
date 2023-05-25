@@ -12,12 +12,16 @@ class Anatomy {
   clear() {
     this.cells = [];
 
-    // Not removing these for backwards-compatibility
-    this.has_producer = false;
+    this.has_brain = false;
+    this.has_mouth = false;
     this.has_mover = false;
     this.has_eye = false;
+    this.has_killer = false;
+    this.has_producer = false;
+    this.has_armor = false;
 
-    this.producer_count = 0;
+    this.brain_count = 0;
+    this.mouth_count = 0;
     this.mover_count = 0;
     this.eye_count = 0;
     this.killer_count = 0;
@@ -34,37 +38,48 @@ class Anatomy {
     return true;
   }
 
-  addDefaultCell(state, c, r) {
+  addDefaultCell(state, c, r, check_types = false) {
     var new_cell = BodyCellFactory.createDefault(this.owner, state, c, r);
     this.cells.push(new_cell);
+    if (check_types) {
+      this.checkTypeChange();
+    }
     return new_cell;
   }
 
-  addRandomizedCell(state, c, r) {
-    if (state == CellStates.eye && !this.has_eye) {
-      this.owner.brain.randomizeDecisions();
-    }
+  addRandomizedCell(state, c, r, check_types = false) {
     var new_cell = BodyCellFactory.createRandom(this.owner, state, c, r);
     this.cells.push(new_cell);
+    // randomize decisions for first brain cell
+    if (state == CellStates.brain && !this.has_brain) {
+      this.owner.brain.randomizeDecisions();
+    }
+    if (check_types) {
+      this.checkTypeChange();
+    }
     return new_cell;
   }
 
-  addInheritCell(parent_cell) {
+  addInheritCell(parent_cell, check_types = false) {
     var new_cell = BodyCellFactory.createInherited(this.owner, parent_cell);
     this.cells.push(new_cell);
+    if (check_types) {
+      this.checkTypeChange();
+    }
     return new_cell;
   }
 
-  replaceCell(state, c, r, randomize = true) {
-    this.removeCell(c, r, true);
+  replaceCell(state, c, r, randomize = true, check_types = false) {
+    // false because we don't want to check types until after the replacement
+    this.removeCell(c, r, true, false);
     if (randomize) {
-      return this.addRandomizedCell(state, c, r);
+      return this.addRandomizedCell(state, c, r, check_types);
     } else {
-      return this.addDefaultCell(state, c, r);
+      return this.addDefaultCell(state, c, r, check_types);
     }
   }
 
-  removeCell(c, r, allow_center_removal = false) {
+  removeCell(c, r, allow_center_removal = false, check_types = false) {
     if (c == 0 && r == 0 && !allow_center_removal) return false;
     for (var i = 0; i < this.cells.length; i++) {
       var cell = this.cells[i];
@@ -73,7 +88,9 @@ class Anatomy {
         break;
       }
     }
-    this.checkTypeChange();
+    if (check_types) {
+      this.checkTypeChange();
+    }
     return true;
   }
 
@@ -87,14 +104,22 @@ class Anatomy {
   }
 
   checkTypeChange() {
-    this.has_producer = false;
+    this.has_brain = false;
+    this.has_mouth = false;
     this.has_mover = false;
     this.has_eye = false;
+    this.has_killer = false;
+    this.has_producer = false;
+    this.has_armor = false;
     for (var cell of this.cells) {
       // @todo: should be using a switch here
-      if (cell.state == CellStates.producer) {
-        this.has_producer = true;
-        this.producer_count++;
+      if (cell.state == CellStates.brain) {
+        this.has_brain = true;
+        this.brain_count++;
+      }
+      if (cell.state == CellStates.mouth) {
+        this.has_mouth = true;
+        this.mouth_count++;
       }
       if (cell.state == CellStates.mover) {
         this.has_mover = true;
@@ -105,11 +130,11 @@ class Anatomy {
         this.eye_count++;
       }
       if (cell.state == CellStates.killer) {
-        this.has_eye = true;
+        this.has_killer = true;
         this.killer_count++;
       }
       if (cell.state == CellStates.producer) {
-        this.has_eye = true;
+        this.has_producer = true;
         this.producer_count++;
       }
       if (cell.state == CellStates.armor) {
@@ -165,8 +190,9 @@ class Anatomy {
   loadRaw(anatomy) {
     this.clear();
     for (let cell of anatomy.cells) {
-      this.addInheritCell(cell);
+      this.addInheritCell(cell, false);
     }
+    this.checkTypeChange();
   }
 }
 

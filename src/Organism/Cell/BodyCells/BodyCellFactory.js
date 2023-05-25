@@ -1,3 +1,4 @@
+import BrainCell from './BrainCell';
 import MouthCell from './MouthCell';
 import ProducerCell from './ProducerCell';
 import MoverCell from './MoverCell';
@@ -9,6 +10,7 @@ import CellStates from '../CellStates';
 const BodyCellFactory = {
   init: function () {
     var type_map = {};
+    type_map[CellStates.brain.name] = BrainCell;
     type_map[CellStates.mouth.name] = MouthCell;
     type_map[CellStates.producer.name] = ProducerCell;
     type_map[CellStates.mover.name] = MoverCell;
@@ -40,6 +42,7 @@ const BodyCellFactory = {
     return cell;
   },
 };
+
 BodyCellFactory.init();
 
 export default BodyCellFactory;

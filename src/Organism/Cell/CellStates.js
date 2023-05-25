@@ -10,7 +10,7 @@ class CellState {
     ctx.fillRect(cell.x, cell.y, size, size);
   }
 }
-
+// non-living
 class Empty extends CellState {
   constructor() {
     super('empty');
@@ -24,6 +24,12 @@ class Food extends CellState {
 class Wall extends CellState {
   constructor() {
     super('wall');
+  }
+}
+// Living
+class Brain extends CellState {
+  constructor() {
+    super('brain');
   }
 }
 class Mouth extends CellState {
@@ -74,9 +80,12 @@ class Eye extends CellState {
 }
 
 const CellStates = {
+  // non-living
   empty: new Empty(),
   food: new Food(),
   wall: new Wall(),
+  // living
+  brain: new Brain(),
   mouth: new Mouth(),
   producer: new Producer(),
   mover: new Mover(),
@@ -89,9 +98,12 @@ const CellStates = {
 
   defineLists() {
     this.all = [
+      // non-living
       this.empty,
       this.food,
       this.wall,
+      // living
+      this.brain,
       this.mouth,
       this.producer,
       this.mover,
@@ -100,6 +112,7 @@ const CellStates = {
       this.eye,
     ];
     this.living = [
+      this.brain,
       this.mouth,
       this.producer,
       this.mover,

@@ -5,16 +5,19 @@ const WorldConfig = {
   auto_pause: true,
   brush_size: 2,
   color_scheme: {
-    empty: '#0E1318',
-    food: '#2F7AB7',
+    // non-living
+    empty: '#111111',
+    food: '#15DE59',
     wall: '#808080',
-    mouth: '#DEB14D',
-    producer: '#15DE59',
-    mover: '#60D4FF',
-    killer: '#F82380',
-    armor: '#7230DB',
-    eye: '#B6C1EA',
-    'eye-slit': '#0E1318',
+    // living
+    brain: '#FF00FF',
+    mouth: '#FFAA00',
+    producer: '#0000FF',
+    mover: '#00FFFF',
+    killer: '#FF0000',
+    armor: '#6600CC',
+    eye: '#EEEEEE',
+    'eye-slit': '#000000',
   }
 };
 

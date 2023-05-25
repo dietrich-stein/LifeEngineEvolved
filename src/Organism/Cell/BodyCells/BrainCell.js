@@ -1,43 +1,40 @@
 import CellStates from '../CellStates';
 import BodyCell from './BodyCell';
-import Hyperparams from '../../../Hyperparameters';
-import Directions from '../../Directions';
-import Observation from '../../Perception/Observation';
+//import Hyperparams from '../../../Hyperparameters';
+//import Directions from '../../Directions';
+//import Observation from '../../Perception/Observation';
 
-class EyeCell extends BodyCell {
+class BrainCell extends BodyCell {
   constructor(org, loc_col, loc_row) {
-    super(CellStates.eye, org, loc_col, loc_row);
-    this.org.anatomy.has_eye = true;
+    super(CellStates.brain, org, loc_col, loc_row);
+    this.org.anatomy.has_brain = true;
   }
 
   initInherit(parent) {
     // deep copy parent values
     super.initInherit(parent);
-    this.direction = parent.direction;
+    //this.direction = parent.direction;
   }
 
   initRandom() {
     // initialize values randomly
-    this.direction = Directions.getRandomDirection();
+    //this.direction = Directions.getRandomDirection();
   }
 
   initDefault() {
     // initialize to default values
-    this.direction = Directions.up;
+    //this.direction = Directions.up;
   }
 
-  getAbsoluteDirection() {
+  /*getAbsoluteDirection() {
     var dir = this.org.rotation + this.direction;
     if (dir > 3) dir -= 4;
     return dir;
   }
 
   performFunction() {
-    // @todo: decide if there should be some eye-benefit without a brain
-    if (this.org.anatomy.has_brain) {
-      var obs = this.look();
-      this.org.brain.observe(obs);
-    }
+    var obs = this.look();
+    this.org.brain.observe(obs);
   }
 
   look() {
@@ -81,6 +78,7 @@ class EyeCell extends BodyCell {
     }
     return new Observation(cell, Hyperparams.lookRange, direction);
   }
+  */
 }
 
-export default EyeCell;
+export default BrainCell;

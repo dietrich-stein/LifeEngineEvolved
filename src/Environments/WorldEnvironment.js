@@ -78,9 +78,9 @@ class WorldEnvironment extends Environment {
   OriginOfLife() {
     var center = this.grid_map.getCenter();
     var org = new Organism(center[0], center[1], this);
-    org.anatomy.addDefaultCell(CellStates.mouth, 0, 0);
-    org.anatomy.addDefaultCell(CellStates.producer, 1, 1);
-    org.anatomy.addDefaultCell(CellStates.producer, -1, -1);
+    org.anatomy.addDefaultCell(CellStates.mouth, 0, 0, false);
+    org.anatomy.addDefaultCell(CellStates.producer, 1, 1, false);
+    org.anatomy.addDefaultCell(CellStates.producer, -1, -1, true);
     this.addOrganism(org);
     this.fossilRecord.addSpecies(org, null);
   }

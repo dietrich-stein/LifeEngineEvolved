@@ -45,6 +45,7 @@ class OrganismEditor extends Environment {
         prev_cell.loc_col,
         prev_cell.loc_row,
         false,
+        true,
       );
       this.changeCell(c, r, state, new_cell);
     } else if (this.organism.anatomy.canAddCellAt(loc_c, loc_r)) {
@@ -52,7 +53,7 @@ class OrganismEditor extends Environment {
         c,
         r,
         state,
-        this.organism.anatomy.addDefaultCell(state, loc_c, loc_r),
+        this.organism.anatomy.addDefaultCell(state, loc_c, loc_r, true),
       );
     }
     this.organism.species = new Species(this.organism.anatomy, null, 0);
@@ -68,7 +69,7 @@ class OrganismEditor extends Environment {
     }
     var prev_cell = this.organism.anatomy.getLocalCell(loc_c, loc_r);
     if (prev_cell != null) {
-      if (this.organism.anatomy.removeCell(loc_c, loc_r)) {
+      if (this.organism.anatomy.removeCell(loc_c, loc_r, false, true)) {
         this.changeCell(c, r, CellStates.empty, null);
         this.organism.species = new Species(this.organism.anatomy, null, 0);
       }
@@ -96,7 +97,7 @@ class OrganismEditor extends Environment {
     this.clear();
     var center = this.grid_map.getCenter();
     this.organism = new Organism(center[0], center[1], this, null);
-    this.organism.anatomy.addDefaultCell(CellStates.mouth, 0, 0);
+    this.organism.anatomy.addDefaultCell(CellStates.mouth, 0, 0, true);
     this.organism.updateGrid();
     this.organism.species = new Species(this.organism.anatomy, null, 0);
   }

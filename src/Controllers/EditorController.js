@@ -46,8 +46,9 @@ class EditorController extends CanvasController {
         this.env.renderFull();
       } else
         this.env.addCellToOrg(this.mouse_c, this.mouse_r, this.edit_cell_type);
-    } else if (this.right_click)
+    } else if (this.right_click) {
       this.env.removeCellFromOrg(this.mouse_c, this.mouse_r);
+    }
 
     this.setBrainPanelVisibility();
     this.setMoveRangeVisibility();
@@ -69,6 +70,9 @@ class EditorController extends CanvasController {
     var self = this;
     $('.cell-type').click(function () {
       switch (this.id) {
+        case 'brain':
+          self.edit_cell_type = CellStates.brain;
+          break;
         case 'mouth':
           self.edit_cell_type = CellStates.mouth;
           break;
@@ -215,7 +219,8 @@ class EditorController extends CanvasController {
 
   setBrainPanelVisibility() {
     var org = this.env.organism;
-    if (org.anatomy.has_eye && org.anatomy.has_mover) {
+    // previously this needed "org.anatomy.has_eye && org.anatomy.has_mover"
+    if (org.anatomy.has_brain) {
       $('.brain-details').css('display', 'block');
       return true;
     }

@@ -41,6 +41,7 @@ class Engine {
 
   setGUI() {
     const folderColorScheme = this.gui.addFolder("Color Scheme")
+    // non-living
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'empty')
       .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
@@ -49,6 +50,11 @@ class Engine {
       .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'wall')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+
+    // living
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'brain')
       .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'mouth')

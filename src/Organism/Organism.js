@@ -23,7 +23,7 @@ class Organism {
     this.ignore_brain_for = 0;
     this.mutability = 5;
     this.damage = 0;
-    this.brain = new Brain(this);
+    this.brain = null;
     if (parent != null) {
       this.inherit(parent);
     }
@@ -35,9 +35,13 @@ class Organism {
     this.species = parent.species;
     for (var c of parent.anatomy.cells) {
       //deep copy parent cells
-      this.anatomy.addInheritCell(c);
+      this.anatomy.addInheritCell(c, false);
     }
-    if (parent.anatomy.has_mover && parent.anatomy.has_eye) {
+    this.anatomy.checkTypeChange();
+
+    // previously needed "parent.anatomy.has_mover && parent.anatomy.has_eye"
+    if (parent.anatomy.has_brain) {
+      this.brain = new Brain(this);
       this.brain.copy(parent.brain);
     }
   }
@@ -75,20 +79,35 @@ class Organism {
         if (org.mutability < 1) org.mutability = 1;
       }
     }
+
+    // body cell mutation
     var mutated = false;
     if (Math.random() * 100 <= prob) {
-      if (org.anatomy.has_mover && Math.random() * 100 <= 10) {
-        if (org.anatomy.has_eye) {
-          org.brain.mutate();
-        }
-        org.move_range += Math.floor(Math.random() * 4) - 2;
-        if (org.move_range <= 0) {
-          org.move_range = 1;
-        }
-      } else {
-        mutated = org.mutate();
-      }
+      mutated = org.mutateCells(org);
     }
+
+    // brain decision mutation
+    // @todo: Scale some kind of advantage based on the number of brain cells.
+    // @todo: Perhaps reduce brain mutation with increased brain cell count?
+    if (org.anatomy.has_brain) {
+      if (org.brain === null) {
+        org.brain = new Brain(org);
+      }
+      org.brain.mutateDecisions();
+    }
+
+    /*
+    Ultimately, having it determine genome length would be amazing.
+    In the near term, it could be interesting to add a cell-count cost to the
+    actions such that more advanced ones require not just specialized cell types
+    but a "large" enough brain to coordinate them.
+
+    Another interesting opportunity is "talk" which could send the brain config
+    and stats that represent current performance. A cell that does "talk" to a
+    species member could transfer beneficial learning if the recipient accepts
+    the information. Received learning could dramatically improve the
+    efficiency of the evolution process.
+    */
 
     var direction = Directions.getRandomScalar();
     var direction_c = direction[0];
@@ -115,10 +134,13 @@ class Organism {
     Math.max((this.food_collected -= this.foodNeeded()), 0);
   }
 
-  mutate() {
+  mutateCells(org) {
     let added = false;
     let changed = false;
     let removed = false;
+
+    // add random cell
+    // @todo: a way to define max # of cell type; or make this a param?!
     if (this.calcRandomChance(Hyperparams.addProb)) {
       let branch = this.anatomy.getRandomCell();
       let state = CellStates.getRandomLivingType(); //branch.state;
@@ -131,18 +153,23 @@ class Organism {
         this.anatomy.addRandomizedCell(state, c, r);
       }
     }
+    // replace cell with random cell
+    // @todo: a way to define max # of cell type; or make this a param?!
     if (this.calcRandomChance(Hyperparams.changeProb)) {
       let cell = this.anatomy.getRandomCell();
       let state = CellStates.getRandomLivingType();
-      this.anatomy.replaceCell(state, cell.loc_col, cell.loc_row);
+      this.anatomy.replaceCell(state, cell.loc_col, cell.loc_row, false, true);
       changed = true;
     }
+    // remove
+    // @todo: a way to define min # of cell type to keep; or make this a param?!
     if (this.calcRandomChance(Hyperparams.removeProb)) {
       if (this.anatomy.cells.length > 1) {
         let cell = this.anatomy.getRandomCell();
-        removed = this.anatomy.removeCell(cell.loc_col, cell.loc_row);
+        removed = this.anatomy.removeCell(cell.loc_col, cell.loc_row, false, true);
       }
     }
+
     return added || changed || removed;
   }
 
@@ -298,7 +325,8 @@ class Organism {
     if (this.anatomy.has_mover) {
       this.move_count++;
       var changed_dir = false;
-      if (this.ignore_brain_for == 0) {
+
+      if (this.anatomy.has_brain && this.ignore_brain_for == 0) {
         changed_dir = this.brain.decide();
       } else if (this.ignore_brain_for > 0) {
         this.ignore_brain_for--;
@@ -367,7 +395,12 @@ class Organism {
   loadRaw(org) {
     SerializeHelper.overwriteNonObjects(org, this);
     this.anatomy.loadRaw(org.anatomy);
-    if (org.brain) this.brain.copy(org.brain);
+    if (org.brain && org.brain !== null) {
+      if (this.brain === null) {
+        this.brain = new Brain(org);
+      }
+      this.brain.copy(org.brain);
+    }
   }
 }
 
