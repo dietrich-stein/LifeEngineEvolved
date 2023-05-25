@@ -3,7 +3,10 @@ class Renderer {
   constructor(canvas_id, container_id, cell_size) {
     this.cell_size = cell_size;
     this.canvas = document.getElementById(canvas_id);
-    this.ctx = this.canvas.getContext('2d');
+    this.ctx = this.canvas.getContext('2d', {
+      willReadFrequently: true,
+    });
+
     this.fillWindow(container_id);
     this.height = this.canvas.height;
     this.width = this.canvas.width;

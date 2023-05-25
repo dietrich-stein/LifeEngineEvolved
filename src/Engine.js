@@ -1,29 +1,26 @@
 import WorldEnvironment from './Environments/WorldEnvironment';
 import ControlPanel from './Controllers/ControlPanel';
 import OrganismEditor from './Environments/OrganismEditor';
-import ColorScheme from './Rendering/ColorScheme';
+import ColorSchemeManager from './Rendering/ColorSchemeManager';
 import { GUI } from 'dat.gui';
 
-const gui = new GUI();
 // If the simulation speed is below this value, a new interval will be created to handle ui rendering
 // at a reasonable speed. If it is above, the simulation interval will be used to update the ui.
 const min_render_speed = 60;
 
 class Engine {
   constructor() {
-    // https://github.com/dataarts/dat.gui/blob/master/API.md
-    this.gui = new dat.GUI({
-      name: "My GUI",
-      autoPlace: true
-    });
-    this.setGUI();
-
     this.fps = 60;
+
     this.env = new WorldEnvironment(5);
+
     this.organism_editor = new OrganismEditor();
+
     this.controlpanel = new ControlPanel(this);
-    this.colorscheme = new ColorScheme(this.env, this.organism_editor);
-    this.colorscheme.loadColorScheme();
+
+    this.colorSchemeManager = new ColorSchemeManager(this.env, this.organism_editor);
+    this.colorSchemeManager.renderColorScheme();
+
     this.env.OriginOfLife();
 
     this.sim_last_update = Date.now();
@@ -34,12 +31,47 @@ class Engine {
 
     this.actual_fps = 0;
     this.running = false;
+
+    // https://github.com/dataarts/dat.gui/blob/master/API.md
+    this.gui = new GUI({
+      //autoPlace: false
+    });
+    this.setGUI();
   }
 
   setGUI() {
-    const folder1 = this.gui.addFolder('Flow Field');
-    folder1.open();
-    gui.show();
+    const folderColorScheme = this.gui.addFolder("Color Scheme")
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'empty')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'food')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'wall')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'mouth')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'producer')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorSchem(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'mover')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'killer')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'armor')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'eye')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme
+      .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'eye-slit')
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+    folderColorScheme.open();
   }
 
   start(fps = 60) {

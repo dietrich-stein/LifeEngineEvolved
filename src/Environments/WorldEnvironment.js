@@ -11,6 +11,7 @@ import SerializeHelper from '../Utils/SerializeHelper';
 import Species from '../Stats/Species';
 
 class WorldEnvironment extends Environment {
+  config = WorldConfig;
   constructor(cell_size) {
     super();
     this.renderer = new Renderer('env-canvas', 'env', cell_size);
@@ -47,7 +48,7 @@ class WorldEnvironment extends Environment {
   }
 
   render() {
-    if (WorldConfig.headless) {
+    if (this.config.headless) {
       this.renderer.cells_to_render.clear();
       return;
     }
@@ -66,8 +67,8 @@ class WorldEnvironment extends Environment {
       this.organisms.splice(i, 1);
     }
     if (this.organisms.length === 0 && start_pop > 0) {
-      if (WorldConfig.auto_pause) $('.pause-button')[0].click();
-      else if (WorldConfig.auto_reset) {
+      if (this.config.auto_pause) $('.pause-button')[0].click();
+      else if (this.config.auto_reset) {
         this.reset_count++;
         this.reset(false);
       }
@@ -157,7 +158,7 @@ class WorldEnvironment extends Environment {
       return false;
 
     this.organisms = [];
-    this.grid_map.fillGrid(CellStates.empty, !WorldConfig.clear_walls_on_reset);
+    this.grid_map.fillGrid(CellStates.empty, !this.config.clear_walls_on_reset);
     this.renderer.renderFullGrid(this.grid_map.grid);
     this.total_mutability = 0;
     this.total_ticks = 0;
