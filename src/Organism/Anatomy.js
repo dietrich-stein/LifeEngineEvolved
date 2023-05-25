@@ -11,9 +11,18 @@ class Anatomy {
 
   clear() {
     this.cells = [];
+
+    // Not removing these for backwards-compatibility
     this.has_producer = false;
     this.has_mover = false;
     this.has_eye = false;
+
+    this.producer_count = 0;
+    this.mover_count = 0;
+    this.eye_count = 0;
+    this.killer_count = 0;
+    this.producer_count = 0;
+    this.armor_count = 0;
   }
 
   canAddCellAt(c, r) {
@@ -82,9 +91,31 @@ class Anatomy {
     this.has_mover = false;
     this.has_eye = false;
     for (var cell of this.cells) {
-      if (cell.state == CellStates.producer) this.has_producer = true;
-      if (cell.state == CellStates.mover) this.has_mover = true;
-      if (cell.state == CellStates.eye) this.has_eye = true;
+      // @todo: should be using a switch here
+      if (cell.state == CellStates.producer) {
+        this.has_producer = true;
+        this.producer_count++;
+      }
+      if (cell.state == CellStates.mover) {
+        this.has_mover = true;
+        this.mover_count++;
+      }
+      if (cell.state == CellStates.eye) {
+        this.has_eye = true;
+        this.eye_count++;
+      }
+      if (cell.state == CellStates.killer) {
+        this.has_eye = true;
+        this.killer_count++;
+      }
+      if (cell.state == CellStates.producer) {
+        this.has_eye = true;
+        this.producer_count++;
+      }
+      if (cell.state == CellStates.armor) {
+        this.has_eye = true;
+        this.armor_count++;
+      }
     }
   }
 
