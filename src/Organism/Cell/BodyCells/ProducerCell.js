@@ -5,11 +5,11 @@ import Hyperparams from '../../../Hyperparameters';
 class ProducerCell extends BodyCell {
   constructor(org, loc_col, loc_row) {
     super(CellStates.producer, org, loc_col, loc_row);
-    this.org.anatomy.is_producer = true;
+    this.org.anatomy.has_producer = true;
   }
 
   performFunction() {
-    if (this.org.anatomy.is_mover && !Hyperparams.moversCanProduce) return;
+    if (this.org.anatomy.has_mover && !Hyperparams.moversCanProduce) return;
     var env = this.org.env;
     var prob = Hyperparams.foodProdProb;
     var real_c = this.getRealCol();

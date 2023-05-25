@@ -1454,8 +1454,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1519,8 +1519,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1584,8 +1584,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1649,8 +1649,8 @@
       "damage": 10,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1714,8 +1714,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1779,8 +1779,8 @@
       "damage": 13,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1844,8 +1844,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1909,8 +1909,8 @@
       "damage": 16,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -1974,8 +1974,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2039,8 +2039,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2104,8 +2104,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2169,8 +2169,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2233,8 +2233,8 @@
       "damage": 8,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2298,8 +2298,8 @@
       "damage": 1,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2363,8 +2363,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2428,8 +2428,8 @@
       "damage": 1,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2493,8 +2493,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2558,8 +2558,8 @@
       "damage": 10,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2623,8 +2623,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2688,8 +2688,8 @@
       "damage": 10,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2753,8 +2753,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2818,8 +2818,8 @@
       "damage": 13,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2883,8 +2883,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -2948,8 +2948,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3013,8 +3013,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3078,8 +3078,8 @@
       "damage": 16,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3143,8 +3143,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3208,8 +3208,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3273,8 +3273,8 @@
       "damage": 15,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3338,8 +3338,8 @@
       "damage": 9,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3403,8 +3403,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3468,8 +3468,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3533,8 +3533,8 @@
       "damage": 8,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3598,8 +3598,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3662,8 +3662,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3727,8 +3727,8 @@
       "damage": 10,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3792,8 +3792,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3857,8 +3857,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3922,8 +3922,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -3987,8 +3987,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4052,8 +4052,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4117,8 +4117,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4182,8 +4182,8 @@
       "damage": 7,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4247,8 +4247,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4312,8 +4312,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4377,8 +4377,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4442,8 +4442,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4507,8 +4507,8 @@
       "damage": 9,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4572,8 +4572,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4637,8 +4637,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4702,8 +4702,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4767,8 +4767,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4832,8 +4832,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4897,8 +4897,8 @@
       "damage": 9,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -4962,8 +4962,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5027,8 +5027,8 @@
       "damage": 11,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5092,8 +5092,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5157,8 +5157,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5222,8 +5222,8 @@
       "damage": 9,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5287,8 +5287,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5352,8 +5352,8 @@
       "damage": 1,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5417,8 +5417,8 @@
       "damage": 16,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5482,8 +5482,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5547,8 +5547,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5612,8 +5612,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5677,8 +5677,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5742,8 +5742,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5807,8 +5807,8 @@
       "damage": 11,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5872,8 +5872,8 @@
       "damage": 13,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -5937,8 +5937,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6002,8 +6002,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6067,8 +6067,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6132,8 +6132,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6197,8 +6197,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6262,8 +6262,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6326,8 +6326,8 @@
       "damage": 10,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6391,8 +6391,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6456,8 +6456,8 @@
       "damage": 10,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6521,8 +6521,8 @@
       "damage": 7,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6586,8 +6586,8 @@
       "damage": 13,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6651,8 +6651,8 @@
       "damage": 13,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6716,8 +6716,8 @@
       "damage": 8,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6781,8 +6781,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6846,8 +6846,8 @@
       "damage": 16,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6911,8 +6911,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -6976,8 +6976,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7041,8 +7041,8 @@
       "damage": 7,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7106,8 +7106,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7171,8 +7171,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7236,8 +7236,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7301,8 +7301,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7366,8 +7366,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7431,8 +7431,8 @@
       "damage": 14,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7496,8 +7496,8 @@
       "damage": 7,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7561,8 +7561,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7625,8 +7625,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7690,8 +7690,8 @@
       "damage": 13,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7755,8 +7755,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7820,8 +7820,8 @@
       "damage": 11,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7885,8 +7885,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -7950,8 +7950,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8015,8 +8015,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8080,8 +8080,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8145,8 +8145,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8210,8 +8210,8 @@
       "damage": 7,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8275,8 +8275,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8340,8 +8340,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8405,8 +8405,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8470,8 +8470,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8535,8 +8535,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8600,8 +8600,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8665,8 +8665,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8730,8 +8730,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8795,8 +8795,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8860,8 +8860,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8925,8 +8925,8 @@
       "damage": 8,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -8990,8 +8990,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9055,8 +9055,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9119,8 +9119,8 @@
       "damage": 8,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9184,8 +9184,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9249,8 +9249,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9314,8 +9314,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9379,8 +9379,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9444,8 +9444,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9509,8 +9509,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9574,8 +9574,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9639,8 +9639,8 @@
       "damage": 5,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9704,8 +9704,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9769,8 +9769,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9834,8 +9834,8 @@
       "damage": 1,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9899,8 +9899,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -9964,8 +9964,8 @@
       "damage": 11,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10029,8 +10029,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10093,8 +10093,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10158,8 +10158,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10222,8 +10222,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10287,8 +10287,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10352,8 +10352,8 @@
       "damage": 1,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10412,8 +10412,8 @@
       "damage": 9,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10477,8 +10477,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10542,8 +10542,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10606,8 +10606,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10671,8 +10671,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10736,8 +10736,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10801,8 +10801,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10866,8 +10866,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10931,8 +10931,8 @@
       "damage": 6,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -10996,8 +10996,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11061,8 +11061,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11126,8 +11126,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11191,8 +11191,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11256,8 +11256,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11321,8 +11321,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11386,8 +11386,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11446,8 +11446,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11511,8 +11511,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11576,8 +11576,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11641,8 +11641,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11706,8 +11706,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11771,8 +11771,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11836,8 +11836,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11901,8 +11901,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -11966,8 +11966,8 @@
       "damage": 12,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12031,8 +12031,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12096,8 +12096,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12161,8 +12161,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12226,8 +12226,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12290,8 +12290,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12355,8 +12355,8 @@
       "damage": 2,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12420,8 +12420,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12485,8 +12485,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12550,8 +12550,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12615,8 +12615,8 @@
       "damage": 17,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12680,8 +12680,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12745,8 +12745,8 @@
       "damage": 3,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12810,8 +12810,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12875,8 +12875,8 @@
       "damage": 4,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -12940,8 +12940,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13005,8 +13005,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13070,8 +13070,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13134,8 +13134,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13199,8 +13199,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13264,8 +13264,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13329,8 +13329,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
@@ -13394,8 +13394,8 @@
       "damage": 0,
       "anatomy": {
         "birth_distance": 10,
-        "is_producer": true,
-        "is_mover": true,
+        "has_producer": true,
+        "has_mover": true,
         "has_eyes": true,
         "cells": [
           { "loc_col": 0, "loc_row": 0, "state": { "name": "killer" } },
