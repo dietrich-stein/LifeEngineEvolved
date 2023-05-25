@@ -1,5 +1,9 @@
 const WorldConfig = {
   headless: false,
+  fill_window: true,
+  cell_size: 5,
+  num_cols: 100,
+  num_rows: 100,
   clear_walls_on_reset: false,
   auto_reset: false,
   auto_pause: true,

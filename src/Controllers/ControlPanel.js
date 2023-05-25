@@ -177,27 +177,6 @@ class ControlPanel {
   }
 
   defineWorldControls() {
-    $('#fill-window').change(function () {
-      if (this.checked) $('.col-row-input').css('display', 'none');
-      else $('.col-row-input').css('display', 'block');
-    });
-
-    $('#resize').click(
-      function () {
-        var cell_size = $('#cell-size').val();
-        var fill_window = $('#fill-window').is(':checked');
-        if (fill_window) {
-          this.engine.env.resizeFillWindow(cell_size);
-        } else {
-          var cols = $('#col-input').val();
-          var rows = $('#row-input').val();
-          this.engine.env.resizeGridColRow(cell_size, cols, rows);
-        }
-        this.engine.env.reset();
-        this.stats_panel.reset();
-      }.bind(this),
-    );
-
     $('#auto-reset').change(function () {
       WorldConfig.auto_reset = this.checked;
     });
@@ -209,7 +188,15 @@ class ControlPanel {
     });
     $('#reset-with-editor-org').click(() => {
       let env = this.engine.env;
-      if (!env.reset(true, false)) return;
+      if (env.fill_window) {
+        if (!env.resetForWindow(env.cell_size, true, false)) {
+          return;
+        }
+      } else {
+        if (!env.resetForSize(env.cell_size, this.engine.num_cols, this.engine.num_rows, true, false)) {
+          return;
+        }
+      }
       let center = env.grid_map.getCenter();
       let org = this.editor_controller.env.getCopyOfOrg();
       this.env_controller.dropOrganism(org, center[0], center[1]);
@@ -436,6 +423,7 @@ class ControlPanel {
         this.stats_panel.reset();
       }.bind(this),
     );
+
     $('#clear-env').click(() => {
       env.reset(true, false);
       this.stats_panel.reset();

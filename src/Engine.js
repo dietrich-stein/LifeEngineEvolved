@@ -11,11 +11,8 @@ const min_render_speed = 60;
 class Engine {
   constructor() {
     this.fps = 60;
-
-    this.env = new WorldEnvironment(5);
-
+    this.env = new WorldEnvironment();
     this.organism_editor = new OrganismEditor();
-
     this.controlpanel = new ControlPanel(this);
 
     this.colorSchemeManager = new ColorSchemeManager(this.env, this.organism_editor);
@@ -40,7 +37,30 @@ class Engine {
   }
 
   setGUI() {
-    const folderColorScheme = this.gui.addFolder("Color Scheme")
+    const folderWorld = this.gui.addFolder("World");
+    folderWorld
+      .add(this.env, 'cell_size', 1, 100, 1)
+      .onFinishChange((val) => {
+        if (this.env.fill_window) {
+          if (this.env.resetForWindow(val)) {
+            this.controlpanel.stats_panel.reset();
+          } else {
+            // restore original value if prompt is denied
+            this.env.cell_size = this.env.renderer.cell_size;
+          }
+        } else {
+          if (this.env.resetForSize(val, this.env.num_cols, this.env.num_rows)) {
+            this.controlpanel.stats_panel.reset();
+          } else {
+            // restore original value if prompt is denied
+            this.env.cell_size = this.env.renderer.cell_size;
+          }
+        }
+        this.gui.updateDisplay();
+      });
+    folderWorld.open();
+
+    const folderColorScheme = this.gui.addFolder("Color Scheme");
     // non-living
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'empty')
@@ -77,7 +97,9 @@ class Engine {
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'eye-slit')
       .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
-    folderColorScheme.open();
+    //folderColorScheme.open();
+
+
   }
 
   start(fps = 60) {

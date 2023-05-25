@@ -27,6 +27,19 @@ body{
   z-index: 1 !important;
 }
 
+#logo {
+  z-index: 1;
+  width: 204px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  opacity: 0.3;
+}
+
+#logo:hover {
+  opacity: 1;
+}
+
 #env {
     position: fixed;
     top: 0;

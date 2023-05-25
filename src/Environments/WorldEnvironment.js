@@ -12,13 +12,33 @@ import Species from '../Stats/Species';
 
 class WorldEnvironment extends Environment {
   config = WorldConfig;
-  constructor(cell_size) {
+  constructor() {
     super();
-    this.renderer = new Renderer('env-canvas', 'env', cell_size);
+
+    this.headless = this.config.headless;
+    this.fill_window = this.config.fill_window;
+
+    this.cell_size = this.config.cell_size;
+    this.renderer = new Renderer('env-canvas', 'env', this.cell_size);
+
+    this.num_cols = (this.fill_window)
+      ? Math.ceil(this.renderer.width / this.config.cell_size)
+      : this.config.num_cols;
+    this.num_rows = (this.fill_window)
+      ? Math.ceil(this.renderer.height / this.config.cell_size)
+      : this.config.num_rows;
+
+    this.clear_walls_on_reset = this.config.clear_walls_on_reset;
+    this.auto_reset = this.config.auto_reset;
+    this.auto_pause = this.config.auto_pause;
+    this.brush_size = this.config.brush_size;
+
     this.controller = new EnvironmentController(this, this.renderer.canvas);
-    this.num_rows = Math.ceil(this.renderer.height / cell_size);
-    this.num_cols = Math.ceil(this.renderer.width / cell_size);
-    this.grid_map = new GridMap(this.num_cols, this.num_rows, cell_size);
+    this.grid_map = new GridMap(
+      this.num_cols,
+      this.num_rows,
+      this.cell_size
+    );
     this.organisms = [];
     this.walls = [];
     this.total_mutability = 0;
@@ -48,7 +68,7 @@ class WorldEnvironment extends Environment {
   }
 
   render() {
-    if (this.config.headless) {
+    if (this.headless) {
       this.renderer.cells_to_render.clear();
       return;
     }
@@ -67,8 +87,8 @@ class WorldEnvironment extends Environment {
       this.organisms.splice(i, 1);
     }
     if (this.organisms.length === 0 && start_pop > 0) {
-      if (this.config.auto_pause) $('.pause-button')[0].click();
-      else if (this.config.auto_reset) {
+      if (this.auto_pause) $('.pause-button')[0].click();
+      else if (this.auto_reset) {
         this.reset_count++;
         this.reset(false);
       }
@@ -150,21 +170,40 @@ class WorldEnvironment extends Environment {
     }
   }
 
-  reset(confirm_reset = true, reset_life = true) {
+  resetForSize(cell_size, cols, rows, confirm_reset = true, reset_life = true) {
+    if (!this.resetConfirm(arguments)) return false;
+    this.renderer.cell_size = cell_size;
+    this.resizeGridColRow(cell_size, cols, rows);
+    this.resetAddtional(reset_life);
+    return true;
+  }
+
+  resetForWindow(cell_size, confirm_reset = true, reset_life = true) {
+    if (!this.resetConfirm(arguments)) return false;
+    this.renderer.cell_size = cell_size;
+    this.resizeFillWindow(cell_size);
+    this.resetAddtional(reset_life);
+    return true;
+  }
+
+  resetConfirm(cell_size, cols, rows, confirm_reset = true, reset_life = true) {
     if (
       confirm_reset &&
       !confirm('The current environment will be lost. Proceed?')
-    )
+    ) {
       return false;
+    }
+    return true;
+  }
 
+  resetAddtional(reset_life = true) {
     this.organisms = [];
-    this.grid_map.fillGrid(CellStates.empty, !this.config.clear_walls_on_reset);
+    this.grid_map.fillGrid(CellStates.empty, !this.clear_walls_on_reset);
     this.renderer.renderFullGrid(this.grid_map.grid);
     this.total_mutability = 0;
     this.total_ticks = 0;
     this.fossilRecord.clear_record();
     if (reset_life) this.OriginOfLife();
-    return true;
   }
 
   resizeGridColRow(cell_size, cols, rows) {

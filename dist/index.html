@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<script src="./js/bundle.js"></script>
-
+    <img id='logo' src="./img/title.png" alt="Life Engine">
 		<div id='env'>
 			<canvas id='env-canvas'></canvas>
 		</div>
@@ -23,7 +23,6 @@
 					<button class="edit-mode-btn food-drop selected" id="food-drop" title="Drop/Remove Food. Hotkey: F"><i class="fa fa-cutlery"></i></button>
 					<button class="edit-mode-btn click-kill" id="click-kill" title="Click to kill. Hotkey: G"><i class="fa fa-skull"></i></button>
 				</div>
-				<img src="./img/title.png" alt="Life Engine">
 				<h3>Simulation Speed</h3>
 				<input id="slider" type="range" min="1" max="300" value="60">
 				<button class='pause-button' title="Play/Pause. Hotkey: Spacebar"><i class="fa fa-pause"></i></button>
@@ -158,18 +157,6 @@
 				</div>
 				<div id='world-controls' class='tab'>
 					<div class='left-half'>
-						<h3>Grid Size</h3>
-						<label for="cell-size">Cell Size:</label>
-						<input type="number" id="cell-size" min="1" max="100" value=5 step="1">
-						<label for="fill-window">Fill Window</label>
-						<input type="checkbox" id="fill-window" checked>
-						<div class='col-row-input'>
-							<label for="col-input">Columns:</label>
-							<input type="number" class="grid-size-in" id="col-input" min="1" value=100 step="1">
-							<label for="row-input">Rows:</label>
-							<input type="number" class="grid-size-in" id="row-input" min="1" value=100 step="1">
-						</div>
-						<button id='resize'>Resize and Reset</button>
 						<h3>Reset Options</h3>
 						<label for="auto-reset">Reset on total extinction</label>
 						<input type="checkbox" id="auto-reset" checked>
