@@ -15,8 +15,8 @@
   "species_name": "1fpa7zg0ng",
   "anatomy": {
     "birth_distance": 8,
-    "is_producer": false,
-    "is_mover": true,
+    "has_producer": false,
+    "has_mover": true,
     "has_eyes": true,
     "cells": [
       {

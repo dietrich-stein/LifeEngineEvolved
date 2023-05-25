@@ -14,8 +14,8 @@
   "damage": 0,
   "anatomy": {
     "birth_distance": 4,
-    "is_producer": false,
-    "is_mover": true,
+    "has_producer": false,
+    "has_mover": true,
     "has_eyes": true,
     "cells": [
       {
