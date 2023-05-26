@@ -101,8 +101,9 @@ class WorldEnvironment extends Environment {
       this.organisms.splice(i, 1);
     }
     if (this.organisms.length === 0 && start_pop > 0) {
-      if (this.auto_pause) $('.pause-button')[0].click();
-      else if (this.auto_reset) {
+      if (this.auto_pause) {
+        $('.pause-button')[0].click();
+      } else if (this.auto_reset) {
         this.reset_count++;
         this.resetEnvironment(false);
       }
@@ -208,11 +209,7 @@ class WorldEnvironment extends Environment {
 
   resetForSize(cell_size, num_cols, num_rows, confirm_reset = true, reset_life = true) {
     if (confirm_reset && !this.resetConfirm()) return false;
-    this.resizeGridColRow(
-      cell_size,
-      num_cols, //Math.max(1, num_cols - 10),
-      num_rows //Math.max(1, num_rows - 10)
-    );
+    this.resizeGridColRow(cell_size, num_cols, num_rows);
     this.resetAddtional(reset_life);
     return true;
   }

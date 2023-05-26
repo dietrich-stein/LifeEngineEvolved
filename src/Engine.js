@@ -2,7 +2,7 @@ import WorldEnvironment from './Environments/WorldEnvironment';
 import ControlPanel from './Controllers/ControlPanel';
 import OrganismEditor from './Environments/OrganismEditor';
 import ColorSchemeManager from './Rendering/ColorSchemeManager';
-import { GUI } from 'dat.gui';
+import { GUI, controllers } from 'dat.gui';
 
 // If the simulation speed is below this value, a new interval will be created to handle ui rendering
 // at a reasonable speed. If it is above, the simulation interval will be used to update the ui.
@@ -44,20 +44,82 @@ class Engine {
   }
 
   setGUI() {
+    // Hacky bits to enable title-based tooltips on the folder LI elements
+    let eachController = (fnc) => {
+      for (var controllerName in controllers) {
+        if (controllers.hasOwnProperty(controllerName)) {
+          fnc(controllers[controllerName]);
+        }
+      }
+    }
+    let setTitle = (controller, val) => {
+      if (val) {
+        controller.__li.setAttribute('title', val);
+      } else {
+        controller.__li.removeAttribute('title')
+      }
+      return this;
+    };
+    eachController(function(controller) {
+      if (!controller.prototype.hasOwnProperty('title')) {
+        controller.prototype.title = setTitle;
+      }
+    });
+    let getController = (controllers, name) => {
+      let controller = null;
+      for (let i = 0; i < controllers.length; i++) {
+        let c = controllers[i];
+        if (c.property == name || c.name == name) {
+          controller = c;
+          break;
+        }
+      }
+      return controller;
+    }
+
     // WORLD
     const folderWorld = this.gui.addFolder("World");
     folderWorld
+      .add(this.env, 'auto_reset')
+      .onFinishChange(() => {
+        if (this.env.auto_reset && !this.running) {
+          this.env.reset_count++;
+          this.env.resetEnvironment(false);
+          this.controlpanel.setPaused(this.running);
+        }
+      })
+      .title(
+        getController(folderWorld.__controllers, "auto_reset"),
+        'Automatically reset the environment upon extinction of the last remaining organism'
+      );
+    folderWorld
       .add(this.env, 'fill_window')
-      .onFinishChange(this.handleGridSettingChanged.bind(this));
+      .onFinishChange(this.handleGridSettingChanged.bind(this))
+      .title(
+        getController(folderWorld.__controllers, "fill_window"),
+        'Render the environment such that it fills your browser window'
+      );
     folderWorld
       .add(this.env, 'cell_size', 1, 100, 1)
-      .onFinishChange(this.handleGridSettingChanged.bind(this));
+      .onFinishChange(this.handleGridSettingChanged.bind(this))
+      .title(
+        getController(folderWorld.__controllers, "cell_size"),
+        'Sets the width and height of the cells. If fill_window is enabled this determines the row and column counts.'
+      );
     folderWorld
       .add(this.env, 'num_cols', 1, 1000, 1)
-      .onFinishChange(this.handleGridSettingChanged.bind(this));
+      .onFinishChange(this.handleGridSettingChanged.bind(this))
+      .title(
+        getController(folderWorld.__controllers, "cell_size"),
+        'Sets the number of cell columns in the environment grid if fill_window is disabled.'
+      );
     folderWorld
       .add(this.env, 'num_rows', 1, 1000, 1)
-      .onFinishChange(this.handleGridSettingChanged.bind(this));
+      .onFinishChange(this.handleGridSettingChanged.bind(this))
+      .title(
+        getController(folderWorld.__controllers, "cell_size"),
+        'Sets the number of cell rows in the environment grid if fill_window is disabled.'
+      );
     folderWorld.open();
 
     // COLOR SCHEME

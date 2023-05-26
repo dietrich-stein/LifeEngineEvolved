@@ -177,9 +177,6 @@ class ControlPanel {
   }
 
   defineWorldControls() {
-    $('#auto-reset').change(function () {
-      WorldConfig.auto_reset = this.checked;
-    });
     $('#auto-pause').change(function () {
       WorldConfig.auto_pause = this.checked;
     });
