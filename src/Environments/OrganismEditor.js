@@ -111,7 +111,7 @@ class OrganismEditor extends Environment {
   }
 
   resetWithRandomOrgs(env) {
-    let reset_confirmed = env.reset(true, false);
+    let reset_confirmed = env.resetEnvironment(true, false);
     if (!reset_confirmed) return;
     let numOrganisms = parseInt($('#num-random-orgs').val());
 

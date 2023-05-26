@@ -36,25 +36,9 @@ class Engine {
     this.setGUI();
   }
 
-  handleGridSettingChanged(val) {
-    if (this.env.fill_window) {
-      if (this.env.resetForWindow(this.env.cell_size)) {
-        this.controlpanel.stats_panel.reset();
-      } else {
-        // restore original value if prompt is denied
-        this.env.cell_size = this.env.renderer.cell_size;
-      }
-    } else {
-      if (this.env.resetForSize(
-        this.env.cell_size,
-        this.env.num_cols,
-        this.env.num_rows
-      )) {
-        this.controlpanel.stats_panel.reset();
-      } else {
-        // restore original value if prompt is denied
-        this.env.cell_size = this.env.renderer.cell_size;
-      }
+  handleGridSettingChanged() {
+    if (this.env.resetEnvironment()) {
+      this.controlpanel.stats_panel.reset();
     }
     this.gui.updateDisplay();
   }
@@ -67,6 +51,12 @@ class Engine {
       .onFinishChange(this.handleGridSettingChanged.bind(this));
     folderWorld
       .add(this.env, 'cell_size', 1, 100, 1)
+      .onFinishChange(this.handleGridSettingChanged.bind(this));
+    folderWorld
+      .add(this.env, 'num_cols', 1, 1000, 1)
+      .onFinishChange(this.handleGridSettingChanged.bind(this));
+    folderWorld
+      .add(this.env, 'num_rows', 1, 1000, 1)
       .onFinishChange(this.handleGridSettingChanged.bind(this));
     folderWorld.open();
 
@@ -109,8 +99,6 @@ class Engine {
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'eye-slit')
       .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
     //folderColorScheme.open();
-
-
   }
 
   start(fps = 60) {

@@ -17,16 +17,30 @@ class WorldEnvironment extends Environment {
 
     this.headless = this.config.headless;
     this.fill_window = this.config.fill_window;
-
     this.cell_size = this.config.cell_size;
-    this.renderer = new Renderer('env-canvas', 'env', this.cell_size);
+    this.num_cols = this.config.num_cols;
+    this.num_rows = this.config.num_rows;
 
-    this.num_cols = (this.fill_window)
+    // For fill, the constructor resizes the canvas and updates the rows/cols
+    this.renderer = new Renderer(
+      'env-canvas',
+      'env',
+      this.fill_window,
+      this.cell_size
+    );
+    if (this.fill_window) {
+      this.num_cols = this.renderer.num_cols;
+      this.num_rows = this.renderer.num_rows;
+    }
+
+    /*
+    this.renderer.num_cols = this.num_cols = (this.fill_window)
       ? Math.ceil(this.renderer.width / this.config.cell_size)
       : this.config.num_cols;
-    this.num_rows = (this.fill_window)
+    this.renderer.num_rows = this.num_rows = (this.fill_window)
       ? Math.ceil(this.renderer.height / this.config.cell_size)
       : this.config.num_rows;
+    */
 
     this.clear_walls_on_reset = this.config.clear_walls_on_reset;
     this.auto_reset = this.config.auto_reset;
@@ -90,7 +104,7 @@ class WorldEnvironment extends Environment {
       if (this.auto_pause) $('.pause-button')[0].click();
       else if (this.auto_reset) {
         this.reset_count++;
-        this.reset(false);
+        this.resetEnvironment(false);
       }
     }
   }
@@ -170,27 +184,56 @@ class WorldEnvironment extends Environment {
     }
   }
 
-  resetForSize(cell_size, cols, rows, confirm_reset = true, reset_life = true) {
-    if (!this.resetConfirm(arguments)) return false;
-    this.renderer.cell_size = cell_size;
-    this.resizeGridColRow(cell_size, cols, rows);
+  resetEnvironment(confirm_reset = true, reset_life = true) {
+    // fill_window, cell_size, num_cols, num_rows,
+    if (this.fill_window) {
+      if (!this.resetForWindow(this.cell_size, confirm_reset, reset_life)) {
+        this.resetDenied();
+        return false;
+      }
+    } else {
+      if (!this.resetForSize(
+        this.cell_size,
+        this.num_cols,
+        this.num_rows,
+        confirm_reset,
+        reset_life
+      )) {
+        this.resetDenied();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  resetForSize(cell_size, num_cols, num_rows, confirm_reset = true, reset_life = true) {
+    if (confirm_reset && !this.resetConfirm()) return false;
+    this.resizeGridColRow(
+      cell_size,
+      num_cols, //Math.max(1, num_cols - 10),
+      num_rows //Math.max(1, num_rows - 10)
+    );
     this.resetAddtional(reset_life);
     return true;
   }
 
   resetForWindow(cell_size, confirm_reset = true, reset_life = true) {
-    if (!this.resetConfirm(arguments)) return false;
-    this.renderer.cell_size = cell_size;
+    if (confirm_reset && !this.resetConfirm()) return false;
     this.resizeFillWindow(cell_size);
     this.resetAddtional(reset_life);
     return true;
   }
 
-  resetConfirm(cell_size, cols, rows, confirm_reset = true, reset_life = true) {
-    if (
-      confirm_reset &&
-      !confirm('The current environment will be lost. Proceed?')
-    ) {
+  resetDenied() {
+    // restores original values if prompt is denied
+    this.fill_window = this.renderer.fill_window;
+    this.cell_size = this.renderer.cell_size;
+    this.num_cols = this.renderer.num_cols;
+    this.num_rows = this.renderer.num_rows;
+  }
+
+  resetConfirm() {
+    if (!confirm('The current environment will be lost. Proceed?')) {
       return false;
     }
     return true;
@@ -206,17 +249,28 @@ class WorldEnvironment extends Environment {
     if (reset_life) this.OriginOfLife();
   }
 
-  resizeGridColRow(cell_size, cols, rows) {
+  resizeGridColRow(cell_size, num_cols, num_rows) {
+    this.renderer.fill_window = false;
     this.renderer.cell_size = cell_size;
-    this.renderer.fillShape(rows * cell_size, cols * cell_size);
-    this.grid_map.resize(cols, rows, cell_size);
+    this.renderer.num_cols = num_cols;
+    this.renderer.num_rows = num_rows;
+
+    let height = num_rows * cell_size;
+    let width = num_cols * cell_size;
+
+    this.renderer.fillShape(
+      height - (height * 0.2),
+      width - (width * 0.2)
+    );
+    this.grid_map.resize(num_cols, num_rows, cell_size);
   }
 
   resizeFillWindow(cell_size) {
+    this.renderer.fill_window = true;
     this.renderer.cell_size = cell_size;
     this.renderer.fillWindow('env');
-    this.num_cols = Math.ceil(this.renderer.width / cell_size);
-    this.num_rows = Math.ceil(this.renderer.height / cell_size);
+    this.num_cols = this.renderer.num_cols = Math.ceil(this.renderer.width / cell_size);
+    this.num_rows = this.renderer.num_cols = Math.ceil(this.renderer.height / cell_size);
     this.grid_map.resize(this.num_cols, this.num_rows, cell_size);
   }
 

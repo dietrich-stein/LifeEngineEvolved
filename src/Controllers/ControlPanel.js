@@ -193,7 +193,13 @@ class ControlPanel {
           return;
         }
       } else {
-        if (!env.resetForSize(env.cell_size, this.engine.num_cols, this.engine.num_rows, true, false)) {
+        if (!env.resetForSize(
+          env.cell_size,
+          env.num_cols,
+          env.num_rows,
+          true,
+          false
+        )) {
           return;
         }
       }
@@ -419,14 +425,16 @@ class ControlPanel {
     var env = this.engine.env;
     $('#reset-env').click(
       function () {
-        env.reset();
-        this.stats_panel.reset();
+        if (env.resetEnvironment()) {
+          this.stats_panel.reset();
+        }
       }.bind(this),
     );
 
     $('#clear-env').click(() => {
-      env.reset(true, false);
-      this.stats_panel.reset();
+      if (env.resetEnvironment(true, false)) {
+        this.stats_panel.reset();
+      }
     });
 
     $('#brush-slider').on('input change', function () {

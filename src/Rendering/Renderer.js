@@ -1,15 +1,35 @@
 // Renderer controls access to a canvas. There is one renderer for each canvas
 class Renderer {
-  constructor(canvas_id, container_id, cell_size) {
+  constructor(
+    canvas_id,
+    container_id,
+    fill_window,
+    cell_size,
+    num_cols,
+    num_rows
+  ) {
+    this.fill_window = fill_window;
     this.cell_size = cell_size;
+    this.num_cols = num_cols;
+    this.num_rows = num_rows;
+
     this.canvas = document.getElementById(canvas_id);
     this.ctx = this.canvas.getContext('2d', {
       willReadFrequently: true,
     });
 
-    this.fillWindow(container_id);
+    if (this.fill_window) {
+      this.fillWindow(container_id);
+    }
+
     this.height = this.canvas.height;
     this.width = this.canvas.width;
+
+    if (this.fill_window) {
+      this.num_cols = Math.ceil(this.width / this.cell_size);
+      this.num_rows = Math.ceil(this.height / this.cell_size)
+    }
+
     this.cells_to_render = new Set();
     this.cells_to_highlight = new Set();
     this.highlighted_cells = new Set();
