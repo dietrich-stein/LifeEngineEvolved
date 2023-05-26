@@ -83,14 +83,14 @@ class Engine {
       .add(this.env, 'auto_reset')
       .onFinishChange(() => {
         if (this.env.auto_reset && !this.running) {
-          this.env.reset_count++;
+          this.env.auto_reset_count++;
           this.env.resetEnvironment(false);
           this.controlpanel.setPaused(this.running);
         }
       })
       .title(
-        getController(folderWorld.__controllers, "auto_reset"),
-        'Automatically reset the environment upon extinction of the last remaining organism'
+        getController(folderWorld.__controllers, 'auto_reset'),
+        'If enabled, automatically resets the environment upon extinction of the last remaining organism. If disabled, the environment is paused.'
       );
     folderWorld
       .add(this.env, 'fill_window')

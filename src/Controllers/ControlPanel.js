@@ -177,9 +177,6 @@ class ControlPanel {
   }
 
   defineWorldControls() {
-    $('#auto-pause').change(function () {
-      WorldConfig.auto_pause = this.checked;
-    });
     $('#clear-walls-reset').change(function () {
       WorldConfig.clear_walls_on_reset = this.checked;
     });
@@ -530,7 +527,7 @@ class ControlPanel {
 
   update(delta_time) {
     $('#fps-actual').text('Actual FPS: ' + Math.floor(this.engine.actual_fps));
-    $('#reset-count').text('Auto reset count: ' + this.engine.env.reset_count);
+    $('#reset-count').text('Auto reset count: ' + this.engine.env.auto_reset_count);
     this.stats_panel.updateDetails();
     if (WorldConfig.headless) this.updateHeadlessIcon(delta_time);
   }

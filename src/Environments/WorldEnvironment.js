@@ -44,7 +44,6 @@ class WorldEnvironment extends Environment {
 
     this.clear_walls_on_reset = this.config.clear_walls_on_reset;
     this.auto_reset = this.config.auto_reset;
-    this.auto_pause = this.config.auto_pause;
     this.brush_size = this.config.brush_size;
 
     this.controller = new EnvironmentController(this, this.renderer.canvas);
@@ -57,7 +56,7 @@ class WorldEnvironment extends Environment {
     this.walls = [];
     this.total_mutability = 0;
     this.largest_cell_count = 0;
-    this.reset_count = 0;
+    this.auto_reset_count = 0;
     this.total_ticks = 0;
     this.data_update_rate = 100;
     this.fossilRecord = new FossilRecord(this);
@@ -101,11 +100,11 @@ class WorldEnvironment extends Environment {
       this.organisms.splice(i, 1);
     }
     if (this.organisms.length === 0 && start_pop > 0) {
-      if (this.auto_pause) {
-        $('.pause-button')[0].click();
-      } else if (this.auto_reset) {
-        this.reset_count++;
+      if (this.auto_reset) {
+        this.auto_reset_count++;
         this.resetEnvironment(false);
+      } else {
+        $('.pause-button')[0].click();
       }
     }
   }
