@@ -96,70 +96,113 @@ class Engine {
       .add(this.env, 'fill_window')
       .onFinishChange(this.handleGridSettingChanged.bind(this))
       .title(
-        getController(folderWorld.__controllers, "fill_window"),
+        getController(folderWorld.__controllers, 'fill_window'),
         'Render the environment such that it fills your browser window'
       );
     folderWorld
       .add(this.env, 'cell_size', 1, 100, 1)
       .onFinishChange(this.handleGridSettingChanged.bind(this))
       .title(
-        getController(folderWorld.__controllers, "cell_size"),
+        getController(folderWorld.__controllers, 'cell_size'),
         'Sets the width and height of the cells. If fill_window is enabled this determines the row and column counts.'
       );
     folderWorld
       .add(this.env, 'num_cols', 1, 1000, 1)
       .onFinishChange(this.handleGridSettingChanged.bind(this))
       .title(
-        getController(folderWorld.__controllers, "cell_size"),
+        getController(folderWorld.__controllers, 'num_cols'),
         'Sets the number of cell columns in the environment grid if fill_window is disabled.'
       );
     folderWorld
       .add(this.env, 'num_rows', 1, 1000, 1)
       .onFinishChange(this.handleGridSettingChanged.bind(this))
       .title(
-        getController(folderWorld.__controllers, "cell_size"),
+        getController(folderWorld.__controllers, 'num_rows'),
         'Sets the number of cell rows in the environment grid if fill_window is disabled.'
       );
     folderWorld.open();
 
     // COLOR SCHEME
-    const folderColorScheme = this.gui.addFolder("Color Scheme");
+    const folderColorScheme = this.gui.addFolder("Colors");
     // non-living
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'empty')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'empty'),
+        'The color of cells containing nothing at all.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'food')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'food'),
+        'The color of food cells consumed by the organisms. Organism reproduce when they have eaten enough.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'wall')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
-
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'wall'),
+        'The color of wall cells that seperate the organisms.'
+      );
     // living
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'brain')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'brain'),
+        'Decides actions utilizing abilities of other cells.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'mouth')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'mouth'),
+        'The color of mouth cells used to eats adjacent food.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'producer')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorSchem(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorSchem(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'producer'),
+        'The color of producer cells used to produce adjacent food.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'mover')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'mover'),
+        'The color of mover cells which enable movement and rotation.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'killer')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'killer'),
+        'The color cells when they contains nothing at all.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'armor')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'armor'),
+        'The color of armor cells that negates the effects of killer cells.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'eye')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'eye'),
+        'The color of eye cells used to observes cells, walls, etc.'
+      );
     folderColorScheme
       .addColor(this.colorSchemeManager.world_env.config.color_scheme, 'eye-slit')
-      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); });
+      .onFinishChange(() => { this.colorSchemeManager.renderColorScheme(); })
+      .title(
+        getController(folderColorScheme.__controllers, 'eye-slit'),
+        'The color of the slit or pupil rendered within the eye cells.'
+      );
     //folderColorScheme.open();
   }
 

@@ -157,7 +157,7 @@ class ControlPanel {
   }
 
   defineTabNavigation() {
-    this.tab_id = 'about';
+    this.tab_id = 'world-controls';
     var self = this;
     $('.tabnav-item').click(function () {
       $('.tab').css('display', 'none');

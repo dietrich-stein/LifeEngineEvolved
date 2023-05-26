@@ -33,15 +33,6 @@ class WorldEnvironment extends Environment {
       this.num_rows = this.renderer.num_rows;
     }
 
-    /*
-    this.renderer.num_cols = this.num_cols = (this.fill_window)
-      ? Math.ceil(this.renderer.width / this.config.cell_size)
-      : this.config.num_cols;
-    this.renderer.num_rows = this.num_rows = (this.fill_window)
-      ? Math.ceil(this.renderer.height / this.config.cell_size)
-      : this.config.num_rows;
-    */
-
     this.clear_walls_on_reset = this.config.clear_walls_on_reset;
     this.auto_reset = this.config.auto_reset;
     this.brush_size = this.config.brush_size;
@@ -209,14 +200,14 @@ class WorldEnvironment extends Environment {
   resetForSize(cell_size, num_cols, num_rows, confirm_reset = true, reset_life = true) {
     if (confirm_reset && !this.resetConfirm()) return false;
     this.resizeGridColRow(cell_size, num_cols, num_rows);
-    this.resetAddtional(reset_life);
+    this.resetAdditional(reset_life);
     return true;
   }
 
   resetForWindow(cell_size, confirm_reset = true, reset_life = true) {
     if (confirm_reset && !this.resetConfirm()) return false;
     this.resizeFillWindow(cell_size);
-    this.resetAddtional(reset_life);
+    this.resetAdditional(reset_life);
     return true;
   }
 
@@ -235,7 +226,7 @@ class WorldEnvironment extends Environment {
     return true;
   }
 
-  resetAddtional(reset_life = true) {
+  resetAdditional(reset_life = true) {
     this.organisms = [];
     this.grid_map.fillGrid(CellStates.empty, !this.clear_walls_on_reset);
     this.renderer.renderFullGrid(this.grid_map.grid);
