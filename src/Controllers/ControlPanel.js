@@ -3,6 +3,8 @@ import Modes from './ControlModes';
 import StatsPanel from '../Stats/StatsPanel';
 import WorldConfig from '../WorldConfig';
 import LoadController from './LoadController';
+import RandomOrganismGenerator from '../Organism/RandomOrganismGenerator';
+import Species from '../Stats/Species';
 
 class ControlPanel {
   constructor(engine) {
@@ -41,6 +43,29 @@ class ControlPanel {
     }
     WorldConfig.headless = !WorldConfig.headless;
   }
+
+  resetWithRandomOrganisms(env, num_organisms) {
+    debugger;
+    let reset_confirmed = env.resetEnvironment(true, false);
+    if (!reset_confirmed) {
+      return;
+    }
+
+    let numOrganisms = 100; // parseInt($('#num-random-orgs').val()); // Number of random organisms to generate
+    let size = Math.ceil(8); // @todo: parameterize and expose
+
+    for (let i = 0; i < num_organisms; i++) {
+      let newOrganism = RandomOrganismGenerator.generate(env);
+      newOrganism.species = new Species(newOrganism.anatomy, null, 0);
+      var col = Math.floor(
+        size + Math.random() * (env.grid_map.cols - size * 2),
+      );
+      var row = Math.floor(
+        size + Math.random() * (env.grid_map.rows - size * 2),
+      );
+      env.controller.dropOrganism(newOrganism, col, row);
+    }
+  }  
 
   defineMinMaxControls() {
     this.control_panel_active = false;
@@ -452,11 +477,6 @@ class ControlPanel {
       function () {
         this.engine.organism_editor.createRandom();
         this.editor_controller.refreshDetailsPanel();
-      }.bind(this),
-    );
-    $('.reset-random').click(
-      function () {
-        this.engine.organism_editor.resetWithRandomOrgs(this.engine.env);
       }.bind(this),
     );
 

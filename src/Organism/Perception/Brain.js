@@ -29,6 +29,9 @@ class Brain {
   }
 
   copy(brain) {
+    if (brain === null || Object.keys(brain.decisions).length < 1) {
+      return;
+    }
     for (let dec in brain.decisions) {
       this.decisions[dec] = brain.decisions[dec];
     }
@@ -39,8 +42,8 @@ class Brain {
     if (randomize_all) {
       this.decisions[CellStates.food.name] = Decision.getRandom();
       this.decisions[CellStates.killer.name] = Decision.getRandom();
-
-    this.decisions[CellStates.brain.name] = Decision.getRandom();}
+      this.decisions[CellStates.brain.name] = Decision.getRandom();
+    }
     this.decisions[CellStates.mouth.name] = Decision.getRandom();
     this.decisions[CellStates.producer.name] = Decision.getRandom();
     this.decisions[CellStates.mover.name] = Decision.getRandom();

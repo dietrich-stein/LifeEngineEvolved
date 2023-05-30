@@ -129,6 +129,23 @@ class Engine {
         getController(folderWorld.__controllers, 'num_rows'),
         'Sets the number of cell rows in the environment grid if fill_window is disabled.'
       );
+    folderWorld
+      .add(this.env, 'num_random_orgs', 1, 100, 1)
+      .title(
+        getController(folderWorld.__controllers, 'num_random_orgs'),
+        'Sets the number of random organisms generated when resetting with random organisms.'
+      );
+    folderWorld
+      .add({
+        resetWithRandomOrganisms: () => {
+          this.controlpanel.resetWithRandomOrganisms(this.env, this.env.num_random_orgs)
+        }
+      }, 'resetWithRandomOrganisms', 1, 100, 1)
+      .name('Reset with Random Organisms')
+      .title(
+        getController(folderWorld.__controllers, 'resetWithRandomOrganisms'),
+        'Resets the environment and generates random organisms to inhabit it.'
+      );
     folderWorld.open();
 
     // COLOR SCHEME

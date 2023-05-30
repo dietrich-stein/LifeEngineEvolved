@@ -20,6 +20,7 @@ class WorldEnvironment extends Environment {
     this.cell_size = this.config.cell_size;
     this.num_cols = this.config.num_cols;
     this.num_rows = this.config.num_rows;
+    this.num_random_orgs = this.config.num_random_orgs;
 
     // For fill, the constructor resizes the canvas and updates the rows/cols
     this.renderer = new Renderer(
