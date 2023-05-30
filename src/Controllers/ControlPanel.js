@@ -30,6 +30,18 @@ class ControlPanel {
     LoadController.control_panel = this;
   }
 
+  toggleHeadless() {
+    $('.headless').find('i').toggleClass('fa fa-eye');
+    $('.headless').find('i').toggleClass('fa fa-eye-slash');
+    if (WorldConfig.headless) {
+      $('#headless-notification').css('display', 'none');
+      this.engine.env.renderFull();
+    } else {
+      $('#headless-notification').css('display', 'block');
+    }
+    WorldConfig.headless = !WorldConfig.headless;
+  }
+
   defineMinMaxControls() {
     this.control_panel_active = false;
     this.no_hud = false;
@@ -71,7 +83,7 @@ class ControlPanel {
           $('#click-kill').click();
           break;
         case 'h':
-          $('.headless')[0].click();
+          this.toggleHeadless();
           break;
         case 'j':
         case ' ':
@@ -138,20 +150,6 @@ class ControlPanel {
       function () {
         // toggle pause
         this.setPaused(this.engine.running);
-      }.bind(this),
-    );
-
-    $('.headless').click(
-      function () {
-        $('.headless').find('i').toggleClass('fa fa-eye');
-        $('.headless').find('i').toggleClass('fa fa-eye-slash');
-        if (WorldConfig.headless) {
-          $('#headless-notification').css('display', 'none');
-          this.engine.env.renderFull();
-        } else {
-          $('#headless-notification').css('display', 'block');
-        }
-        WorldConfig.headless = !WorldConfig.headless;
       }.bind(this),
     );
   }

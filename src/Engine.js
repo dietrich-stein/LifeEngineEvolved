@@ -93,6 +93,15 @@ class Engine {
         'If enabled, automatically resets the environment upon extinction of the last remaining organism. If disabled, the environment is paused.'
       );
     folderWorld
+      .add(this.env, 'headless')
+      .onFinishChange(() => {
+        this.controlpanel.toggleHeadless();  
+      })
+      .title(
+        getController(folderWorld.__controllers, 'headless'),
+        'If enabled the environment is not rendered during simulation. Hotkey: H'
+      );      
+    folderWorld
       .add(this.env, 'fill_window')
       .onFinishChange(this.handleGridSettingChanged.bind(this))
       .title(

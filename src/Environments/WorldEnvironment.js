@@ -176,7 +176,6 @@ class WorldEnvironment extends Environment {
   }
 
   resetEnvironment(confirm_reset = true, reset_life = true) {
-    // fill_window, cell_size, num_cols, num_rows,
     if (this.fill_window) {
       if (!this.resetForWindow(this.cell_size, confirm_reset, reset_life)) {
         this.resetDenied();
