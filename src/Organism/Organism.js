@@ -49,7 +49,8 @@ class Organism {
   // amount of food required before it can reproduce
   foodNeeded() {
     return this.anatomy.has_mover
-      ? this.anatomy.cells.length + (Hyperparams.extraMoverFoodCost * this.anatomy.mover_count)
+      ? this.anatomy.cells.length +
+          Hyperparams.extraMoverFoodCost * this.anatomy.mover_count
       : this.anatomy.cells.length;
   }
 
@@ -166,7 +167,12 @@ class Organism {
     if (this.calcRandomChance(Hyperparams.removeProb)) {
       if (this.anatomy.cells.length > 1) {
         let cell = this.anatomy.getRandomCell();
-        removed = this.anatomy.removeCell(cell.loc_col, cell.loc_row, false, true);
+        removed = this.anatomy.removeCell(
+          cell.loc_col,
+          cell.loc_row,
+          false,
+          true,
+        );
       }
     }
 
@@ -336,17 +342,16 @@ class Organism {
 
       // really "move_range" is "move_range_before_maybe_rotate_maybe_changedir"
       if (
-        (
-          this.move_count > (this.move_range + this.anatomy.mover_count) &&
-          !changed_dir
-        )
-        || !moved
+        (this.move_count > this.move_range + this.anatomy.mover_count &&
+          !changed_dir) ||
+        !moved
       ) {
         var rotated = this.attemptRotate();
         if (!rotated) {
           this.changeDirection(Directions.getRandomDirection());
           if (changed_dir) {
-            this.ignore_brain_for = this.move_range + this.anatomy.mover_count + 1;
+            this.ignore_brain_for =
+              this.move_range + this.anatomy.mover_count + 1;
           }
         }
       }

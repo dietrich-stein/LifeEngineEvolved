@@ -6,7 +6,7 @@ class Renderer {
     fill_window,
     cell_size,
     num_cols,
-    num_rows
+    num_rows,
   ) {
     this.fill_window = fill_window;
     this.cell_size = cell_size;
@@ -27,7 +27,7 @@ class Renderer {
 
     if (this.fill_window) {
       this.num_cols = Math.ceil(this.width / this.cell_size);
-      this.num_rows = Math.ceil(this.height / this.cell_size)
+      this.num_rows = Math.ceil(this.height / this.cell_size);
     }
 
     this.cells_to_render = new Set();

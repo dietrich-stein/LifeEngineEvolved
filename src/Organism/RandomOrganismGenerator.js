@@ -14,7 +14,9 @@ class RandomOrganismGenerator {
     // layer 0 is the central cell of the organism
     for (var layer = 1; layer <= outermostLayer; layer++) {
       var someCellSpawned = false;
-      var spawnChance = RandomOrganismGenerator.cellSpawnChance * 1 - (layer - 1) / outermostLayer;
+      var spawnChance =
+        RandomOrganismGenerator.cellSpawnChance * 1 -
+        (layer - 1) / outermostLayer;
 
       // top
       y = -layer;
@@ -74,7 +76,7 @@ class RandomOrganismGenerator {
         CellStates.getRandomLivingType(),
         x,
         y,
-        true
+        true,
       );
       return true;
     }

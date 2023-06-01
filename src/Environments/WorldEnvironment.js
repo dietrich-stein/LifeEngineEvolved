@@ -27,7 +27,7 @@ class WorldEnvironment extends Environment {
       'env-canvas',
       'env',
       this.fill_window,
-      this.cell_size
+      this.cell_size,
     );
     if (this.fill_window) {
       this.num_cols = this.renderer.num_cols;
@@ -39,11 +39,7 @@ class WorldEnvironment extends Environment {
     this.brush_size = this.config.brush_size;
 
     this.controller = new EnvironmentController(this, this.renderer.canvas);
-    this.grid_map = new GridMap(
-      this.num_cols,
-      this.num_rows,
-      this.cell_size
-    );
+    this.grid_map = new GridMap(this.num_cols, this.num_rows, this.cell_size);
     this.organisms = [];
     this.walls = [];
     this.total_mutability = 0;
@@ -183,13 +179,15 @@ class WorldEnvironment extends Environment {
         return false;
       }
     } else {
-      if (!this.resetForSize(
-        this.cell_size,
-        this.num_cols,
-        this.num_rows,
-        confirm_reset,
-        reset_life
-      )) {
+      if (
+        !this.resetForSize(
+          this.cell_size,
+          this.num_cols,
+          this.num_rows,
+          confirm_reset,
+          reset_life,
+        )
+      ) {
         this.resetDenied();
         return false;
       }
@@ -197,7 +195,13 @@ class WorldEnvironment extends Environment {
     return true;
   }
 
-  resetForSize(cell_size, num_cols, num_rows, confirm_reset = true, reset_life = true) {
+  resetForSize(
+    cell_size,
+    num_cols,
+    num_rows,
+    confirm_reset = true,
+    reset_life = true,
+  ) {
     if (confirm_reset && !this.resetConfirm()) return false;
     this.resizeGridColRow(cell_size, num_cols, num_rows);
     this.resetAdditional(reset_life);
@@ -245,10 +249,7 @@ class WorldEnvironment extends Environment {
     let height = num_rows * cell_size;
     let width = num_cols * cell_size;
 
-    this.renderer.fillShape(
-      height - (height * 0.2),
-      width - (width * 0.2)
-    );
+    this.renderer.fillShape(height - height * 0.2, width - width * 0.2);
     this.grid_map.resize(num_cols, num_rows, cell_size);
   }
 
@@ -256,8 +257,12 @@ class WorldEnvironment extends Environment {
     this.renderer.fill_window = true;
     this.renderer.cell_size = cell_size;
     this.renderer.fillWindow('env');
-    this.num_cols = this.renderer.num_cols = Math.ceil(this.renderer.width / cell_size);
-    this.num_rows = this.renderer.num_cols = Math.ceil(this.renderer.height / cell_size);
+    this.num_cols = this.renderer.num_cols = Math.ceil(
+      this.renderer.width / cell_size,
+    );
+    this.num_rows = this.renderer.num_cols = Math.ceil(
+      this.renderer.height / cell_size,
+    );
     this.grid_map.resize(this.num_cols, this.num_rows, cell_size);
   }
 

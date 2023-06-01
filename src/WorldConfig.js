@@ -22,7 +22,7 @@ const WorldConfig = {
     armor: '#6600CC',
     eye: '#EEEEEE',
     'eye-slit': '#000000',
-  }
+  },
 };
 
 export default WorldConfig;

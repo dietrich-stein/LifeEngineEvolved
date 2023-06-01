@@ -24,9 +24,16 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.dg.ac {
+.dg {
+  /*margin-right: 0;*/
   z-index: 1 !important;
 }
+.dg.a {
+  margin-right: 0 !important;
+}
+/*.dg.ac {
+  margin-right: 0;
+}*/
 
 #logo {
   z-index: 1;

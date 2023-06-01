@@ -45,7 +45,6 @@ class ControlPanel {
   }
 
   resetWithRandomOrganisms(env, num_organisms) {
-    debugger;
     let reset_confirmed = env.resetEnvironment(true, false);
     if (!reset_confirmed) {
       return;
@@ -65,7 +64,7 @@ class ControlPanel {
       );
       env.controller.dropOrganism(newOrganism, col, row);
     }
-  }  
+  }
 
   defineMinMaxControls() {
     this.control_panel_active = false;
@@ -210,13 +209,15 @@ class ControlPanel {
           return;
         }
       } else {
-        if (!env.resetForSize(
-          env.cell_size,
-          env.num_cols,
-          env.num_rows,
-          true,
-          false
-        )) {
+        if (
+          !env.resetForSize(
+            env.cell_size,
+            env.num_cols,
+            env.num_rows,
+            true,
+            false,
+          )
+        ) {
           return;
         }
       }
@@ -544,8 +545,9 @@ class ControlPanel {
   }
 
   update(delta_time) {
-    $('#fps-actual').text('Actual FPS: ' + Math.floor(this.engine.actual_fps));
-    $('#reset-count').text('Auto reset count: ' + this.engine.env.auto_reset_count);
+    $('#reset-count').text(
+      'Auto reset count: ' + this.engine.env.auto_reset_count,
+    );
     this.stats_panel.updateDetails();
     if (WorldConfig.headless) this.updateHeadlessIcon(delta_time);
   }

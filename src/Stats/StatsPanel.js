@@ -63,16 +63,20 @@ class StatsPanel {
     var org_count = this.env.organisms.length;
     $('#org-count').text('Total Population: ' + org_count);
 
-    let top5_by_population = Object.values(this.env.fossilRecord.extant_species);
+    let top5_by_population = Object.values(
+      this.env.fossilRecord.extant_species,
+    );
     top5_by_population = top5_by_population
-      .sort((f,s) =>{ return (s.population - f.population) })
+      .sort((f, s) => {
+        return s.population - f.population;
+      })
       .slice(0, 5)
-      .reduce((c, v)=>({ ...c, [v.name]: v.population }), {});
+      .reduce((c, v) => ({ ...c, [v.name]: v.population }), {});
     $('#top-species-population').text(
       'Top 5 Species By Population: ' +
-      JSON.stringify(top5_by_population)
-        .replace(/[{}]/g, "")
-        .replace(/[,]/g, "\n")
+        JSON.stringify(top5_by_population)
+          .replace(/[{}]/g, '')
+          .replace(/[,]/g, '\n'),
     );
 
     $('#species-count').text(

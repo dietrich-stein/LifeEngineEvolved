@@ -35,8 +35,8 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "@dietrich-stein/stats.js": "git+https://github.com/dietrich-stein/stats.js.git",
     "dat.gui": "^0.7.9",
-    "jquery": "^3.6.1",
-    "stats.js": "^0.17.0"
+    "jquery": "^3.6.1"
   }
 }
