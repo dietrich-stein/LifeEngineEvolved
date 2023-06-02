@@ -51,26 +51,39 @@ class BodyCell {
 
   rotatedCol(dir) {
     switch (dir) {
-      case Directions.up:
+      case Directions.n:
+      case Directions.ne:
+      case Directions.nw:
         return this.loc_col;
-      case Directions.down:
+
+      case Directions.s:
+      case Directions.se:
+      case Directions.sw:
         return this.loc_col * -1;
-      case Directions.left:
+
+      case Directions.e:
         return this.loc_row;
-      case Directions.right:
+
+      case Directions.w:
         return this.loc_row * -1;
     }
   }
 
   rotatedRow(dir) {
     switch (dir) {
-      case Directions.up:
+      case Directions.n:
         return this.loc_row;
-      case Directions.down:
+      case Directions.s:
         return this.loc_row * -1;
-      case Directions.left:
+
+      case Directions.w:
+      case Directions.nw:
+      case Directions.sw:
         return this.loc_col * -1;
-      case Directions.right:
+
+      case Directions.e:
+      case Directions.ne:
+      case Directions.nw:
         return this.loc_col;
     }
   }

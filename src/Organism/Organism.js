@@ -15,8 +15,8 @@ class Organism {
     this.food_collected = 0;
     this.living = true;
     this.anatomy = new Anatomy(this);
-    this.direction = Directions.down; // direction of movement
-    this.rotation = Directions.up; // direction of rotation
+    this.movementDirection = Directions.s;
+    this.rotationDirection = Directions.n;
     this.can_rotate = Hyperparams.rotationEnabled;
     this.move_count = 0;
     this.move_range = 4;
@@ -67,7 +67,7 @@ class Organism {
     //check nearby locations (is there room and a direct path)
     var org = new Organism(0, 0, this.env, this);
     if (Hyperparams.rotationEnabled) {
-      org.rotation = Directions.getRandomDirection();
+      org.rotationDirection = Directions.getRandomDirection();
     }
     var prob = this.mutability;
     if (Hyperparams.useGlobalMutability) {
@@ -119,7 +119,7 @@ class Organism {
     var new_r = this.r + direction_r * basemovement + direction_r * offset;
 
     if (
-      org.isClear(new_c, new_r, org.rotation, true) &&
+      org.isClear(new_c, new_r, org.rotationDirection, true) &&
       org.isStraightPath(new_c, new_r, this.c, this.r, this)
     ) {
       org.c = new_c;
@@ -184,15 +184,15 @@ class Organism {
   }
 
   attemptMove() {
-    var direction = Directions.scalars[this.direction];
+    var direction = Directions.scalars[this.movementDirection];
     var direction_c = direction[0];
     var direction_r = direction[1];
     var new_c = this.c + direction_c;
     var new_r = this.r + direction_r;
     if (this.isClear(new_c, new_r)) {
       for (var cell of this.anatomy.cells) {
-        var real_c = this.c + cell.rotatedCol(this.rotation);
-        var real_r = this.r + cell.rotatedRow(this.rotation);
+        var real_c = this.c + cell.rotatedCol(this.rotationDirection);
+        var real_r = this.r + cell.rotatedRow(this.rotationDirection);
         this.env.changeCell(real_c, real_r, CellStates.empty, null);
       }
       this.c = new_c;
@@ -205,19 +205,19 @@ class Organism {
 
   attemptRotate() {
     if (!this.can_rotate) {
-      this.direction = Directions.getRandomDirection();
+      this.movementDirection = Directions.getRandomDirection();
       this.move_count = 0;
       return true;
     }
     var new_rotation = Directions.getRandomDirection();
     if (this.isClear(this.c, this.r, new_rotation)) {
       for (var cell of this.anatomy.cells) {
-        var real_c = this.c + cell.rotatedCol(this.rotation);
-        var real_r = this.r + cell.rotatedRow(this.rotation);
+        var real_c = this.c + cell.rotatedCol(this.rotationDirection);
+        var real_r = this.r + cell.rotatedRow(this.rotationDirection);
         this.env.changeCell(real_c, real_r, CellStates.empty, null);
       }
-      this.rotation = new_rotation;
-      this.direction = Directions.getRandomDirection();
+      this.rotationDirection = new_rotation;
+      this.movementDirection = Directions.getRandomDirection();
       this.updateGrid();
       this.move_count = 0;
       return true;
@@ -225,8 +225,8 @@ class Organism {
     return false;
   }
 
-  changeDirection(dir) {
-    this.direction = dir;
+  changeMovementDirection(dir) {
+    this.movementDirection = dir;
     this.move_count = 0;
   }
 
@@ -271,7 +271,7 @@ class Organism {
     );
   }
 
-  isClear(col, row, rotation = this.rotation) {
+  isClear(col, row, rotation = this.rotationDirection) {
     for (var loccell of this.anatomy.cells) {
       var cell = this.getRealCell(loccell, col, row, rotation);
       if (cell == null) {
@@ -298,8 +298,8 @@ class Organism {
 
   die() {
     for (var cell of this.anatomy.cells) {
-      var real_c = this.c + cell.rotatedCol(this.rotation);
-      var real_r = this.r + cell.rotatedRow(this.rotation);
+      var real_c = this.c + cell.rotatedCol(this.rotationDirection);
+      var real_r = this.r + cell.rotatedRow(this.rotationDirection);
       this.env.changeCell(real_c, real_r, CellStates.food, null);
     }
     this.env.fossilRecord.decreasePopulation(this.species);
@@ -308,8 +308,8 @@ class Organism {
 
   updateGrid() {
     for (var cell of this.anatomy.cells) {
-      var real_c = this.c + cell.rotatedCol(this.rotation);
-      var real_r = this.r + cell.rotatedRow(this.rotation);
+      var real_c = this.c + cell.rotatedCol(this.rotationDirection);
+      var real_r = this.r + cell.rotatedRow(this.rotationDirection);
       this.env.changeCell(real_c, real_r, cell.state, cell);
     }
   }
@@ -348,7 +348,7 @@ class Organism {
       ) {
         var rotated = this.attemptRotate();
         if (!rotated) {
-          this.changeDirection(Directions.getRandomDirection());
+          this.changeMovementDirection(Directions.getRandomDirection());
           if (changed_dir) {
             this.ignore_brain_for =
               this.move_range + this.anatomy.mover_count + 1;
@@ -359,7 +359,7 @@ class Organism {
     return this.living;
   }
 
-  getRealCell(local_cell, c = this.c, r = this.r, rotation = this.rotation) {
+  getRealCell(local_cell, c = this.c, r = this.r, rotation = this.rotationDirection) {
     var real_c = c + local_cell.rotatedCol(rotation);
     var real_r = r + local_cell.rotatedRow(rotation);
     return this.env.grid_map.cellAt(real_c, real_r);

@@ -1,3 +1,5 @@
+import Directions from '../Directions';
+
 // A cell state is used to differentiate type and render the cell
 class CellState {
   constructor(name) {
@@ -72,7 +74,7 @@ class Eye extends CellState {
     var h = size / 2 + size / 4;
     var w = size / 4;
     ctx.translate(cell.x + half, cell.y + half);
-    ctx.rotate((cell.cell_owner.getAbsoluteDirection() * 90 * Math.PI) / 180);
+    ctx.rotate((Directions.getAbsoluteDirection(cell.cell_owner) * 90 * Math.PI) / 180);
     ctx.fillStyle = this.slit_color;
     ctx.fillRect(x, y, w, h);
     ctx.setTransform(1, 0, 0, 1, 0, 0);

@@ -71,10 +71,10 @@ class Brain {
     }
     this.observations = [];
     if (decision == Decision.chase) {
-      this.owner.changeDirection(move_direction);
+      this.owner.changeMovementDirection(move_direction);
       return true;
     } else if (decision == Decision.retreat) {
-      this.owner.changeDirection(
+      this.owner.changeMovementDirection(
         Directions.getOppositeDirection(move_direction),
       );
       return true;

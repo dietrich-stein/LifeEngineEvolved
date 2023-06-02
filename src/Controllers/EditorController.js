@@ -37,6 +37,7 @@ class EditorController extends CanvasController {
   editOrganism() {
     if (this.edit_cell_type == null || this.mode != Modes.Edit) return;
     if (this.left_click) {
+      
       if (
         this.edit_cell_type == CellStates.eye &&
         this.cur_cell.state == CellStates.eye

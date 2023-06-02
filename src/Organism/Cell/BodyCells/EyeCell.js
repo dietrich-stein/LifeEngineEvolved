@@ -23,13 +23,7 @@ class EyeCell extends BodyCell {
 
   initDefault() {
     // initialize to default values
-    this.direction = Directions.up;
-  }
-
-  getAbsoluteDirection() {
-    var dir = this.org.rotation + this.direction;
-    if (dir > 3) dir -= 4;
-    return dir;
+    this.direction = Directions.n;
   }
 
   performFunction() {
@@ -42,22 +36,38 @@ class EyeCell extends BodyCell {
 
   look() {
     var env = this.org.env;
-    var direction = this.getAbsoluteDirection();
+    var lookDirection = Directions.getAbsoluteDirection(this);
     var addCol = 0;
     var addRow = 0;
-    switch (direction) {
-      case Directions.up:
+    switch (lookDirection) {
+      case Directions.n:
         addRow = -1;
         break;
-      case Directions.down:
-        addRow = 1;
+      case Directions.ne:
+        addRow = -1;
+        addCol = 1;        
         break;
-      case Directions.right:
+      case Directions.e:
         addCol = 1;
         break;
-      case Directions.left:
+      case Directions.se:
+        addRow = 1;
+        addCol = 1;        
+        break;        
+      case Directions.s:
+        addRow = 1;
+        break;
+      case Directions.sw:
+        addRow = 1;
+        addCol = -1;        
+        break;
+      case Directions.w:
         addCol = -1;
         break;
+      case Directions.mw:
+        addRow = -1;        
+        addCol = -1;
+        break;        
     }
     var start_col = this.getRealCol();
     var start_row = this.getRealRow();
@@ -76,10 +86,10 @@ class EyeCell extends BodyCell {
       }
       if (cell.state !== CellStates.empty) {
         var distance = Math.abs(start_col - col) + Math.abs(start_row - row);
-        return new Observation(cell, distance, direction);
+        return new Observation(cell, distance, lookDirection);
       }
     }
-    return new Observation(cell, Hyperparams.lookRange, direction);
+    return new Observation(cell, Hyperparams.lookRange, lookDirection);
   }
 }
 
