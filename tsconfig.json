@@ -1,16 +1,20 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Node 14",
-
+  "exclude": [],
   "compilerOptions": {
-    "lib": ["es2020"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "commonjs",
-    "target": "es2020",
-
+    "target": "es2017",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "types",
+    "typeRoots": ["types"],
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */    
   }
 }

@@ -1,8 +1,8 @@
 import ChartController from './ChartController';
 
 class MutationChart extends ChartController {
-  constructor(fossilRecord) {
-    super(fossilRecord, 'Mutation Rate');
+  constructor(fossil_record) {
+    super(fossil_record, 'Mutation Rate');
   }
 
   setData() {
@@ -20,8 +20,8 @@ class MutationChart extends ChartController {
   }
 
   addDataPoint(i) {
-    var t = this.fossilRecord.tick_record[i];
-    var p = this.fossilRecord.av_mut_rates[i];
+    var t = this.fossil_record.tick_record[i];
+    var p = this.fossil_record.av_mut_rates[i];
     this.data[0].dataPoints.push({ x: t, y: p });
   }
 }

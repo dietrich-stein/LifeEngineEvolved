@@ -2,9 +2,9 @@ import CellStates from '../../Organism/Cell/CellStates';
 import ChartController from './ChartController';
 
 class CellsChart extends ChartController {
-  constructor(fossilRecord) {
+  constructor(fossil_record) {
     super(
-      fossilRecord,
+      fossil_record,
       'Organism Size / Composition',
       'Avg. Number of Cells per Organism',
       'Note: to maintain efficiency, species with very small populations are discarded when collecting cell statistics.',
@@ -37,12 +37,12 @@ class CellsChart extends ChartController {
   }
 
   addDataPoint(i) {
-    var t = this.fossilRecord.tick_record[i];
-    var p = this.fossilRecord.av_cells[i];
+    var t = this.fossil_record.tick_record[i];
+    var p = this.fossil_record.av_cells[i];
     this.data[0].dataPoints.push({ x: t, y: p });
     var j = 1;
-    for (var name in this.fossilRecord.av_cell_counts[i]) {
-      var count = this.fossilRecord.av_cell_counts[i][name];
+    for (var name in this.fossil_record.av_cell_counts[i]) {
+      var count = this.fossil_record.av_cell_counts[i][name];
       this.data[j].dataPoints.push({ x: t, y: count });
       j++;
     }

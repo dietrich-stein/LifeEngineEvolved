@@ -1,8 +1,8 @@
 import ChartController from './ChartController';
 
 class PopulationChart extends ChartController {
-  constructor(fossilRecord) {
-    super(fossilRecord, 'Population');
+  constructor(fossil_record) {
+    super(fossil_record, 'Population');
   }
 
   setData() {
@@ -20,8 +20,8 @@ class PopulationChart extends ChartController {
   }
 
   addDataPoint(i) {
-    var t = this.fossilRecord.tick_record[i];
-    var p = this.fossilRecord.pop_counts[i];
+    var t = this.fossil_record.tick_record[i];
+    var p = this.fossil_record.pop_counts[i];
     this.data[0].dataPoints.push({ x: t, y: p });
   }
 }
