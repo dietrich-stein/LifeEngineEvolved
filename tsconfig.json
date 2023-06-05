@@ -1,26 +1,36 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/svelte/tsconfig.json",
   "display": "Node 14",
-  "exclude": [],
+  "include": [
+    "src/**/*", 
+    "webpack.config.ts"
+  ],
+  "exclude": [
+    "node_modules/*", 
+    "__sapper__/*",
+    "public/*"
+  ],
   "compilerOptions": {
     "types": [
-      "node"
-      //"./src/dat.gui.d.ts"
+      "node",
+			"svelte",
+			"svelte/store",
+			"svelte/motion",
+			"svelte/transition",
+			"svelte/animate",
+			"svelte/easing",
+      "webpack"    
     ],
     "lib": [
       "dom",
       "es2017"
     ],
-    "module": "commonjs",
-    "target": "es2017",
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "baseUrl": "types",
-    //"typeRoots": ["types"],
-    //"typeRoots": ["../node_modules/@types"],
-    "skipLibCheck": true /* Skip type checking of declaration files. */,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+    "baseUrl": ".",
+		"paths": {
+			"src/*": ["src/*"]
+		},    
+    "verbatimModuleSyntax": false,
+		"importsNotUsedAsValues": "remove",
+		"isolatedModules": true
   }
 }
