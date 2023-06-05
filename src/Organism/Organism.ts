@@ -6,14 +6,10 @@ import Anatomy from '../Anatomy/Anatomy';
 import Brain from './Perception/BrainController';
 import SerializeHelper from '../Utils/SerializeHelper';
 import Species from '../Stats/Species';
-import WorldEnvironment from '../Environment/WorldEnvironment';
 import BrainController from './Perception/BrainController';
 import Cell from '../Anatomy/Cell';
 import GridCell from '../Grid/GridCell';
-
-function isWorldEnvironment(env: AnyEnvironmentType): env is WorldEnvironment {
-  return (env as WorldEnvironment).addOrganism !== undefined;
-}
+import { isWorldEnvironment } from '../Utils/TypeHelpers';
 
 interface OrganismInterface {
   c: number;

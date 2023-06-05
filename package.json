@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/MaxRobinsonTheGreat/EvolutionSimulatorV2#readme",
   "devDependencies": {
+    "@types/canvasjs": "^1.9.8",
     "@types/jquery": "^3.5.16",
     "eslint": "^8.41.0",
     "http-server": "^14.1.1",
@@ -35,8 +36,9 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "@canvasjs/charts": "^3.7.7",
     "@dietrich-stein/stats.js": "git+https://github.com/dietrich-stein/stats.js.git",
     "dat.gui": "^0.7.9",
-    "jquery": "^3.6.1"
+    "jquery": "^3.7.0"
   }
 }

@@ -2,7 +2,7 @@ import Environment from './Environment';
 import Organism from '../Organism/Organism';
 import GridMap from '../Grid/GridMap';
 import Renderer from '../Rendering/Renderer';
-import EditorController from '../Controllers/EditorController';
+import EditorEnvironmentController from './Controllers/EditorEnvironmentController';
 import RandomOrganismGenerator from '../Organism/RandomOrganismGenerator';
 import Species from '../Stats/Species';
 import CellStates from '../Anatomy/CellStates';
@@ -10,7 +10,7 @@ import Cell from '../Anatomy/Cell';
 
 interface EditorEnvironmentInterface {
   renderer: Renderer;
-  controller: EditorController;
+  controller: EditorEnvironmentController;
   grid_map: GridMap;
   organism: Organism | null;
   is_active: boolean;
@@ -28,7 +28,7 @@ interface EditorEnvironmentInterface {
 
 class EditorEnvironment extends Environment implements EditorEnvironmentInterface {
   renderer: Renderer;
-  controller: EditorController;
+  controller: EditorEnvironmentController;
   grid_map: GridMap;
   organism: Organism | null;
   is_active: boolean;
@@ -37,10 +37,10 @@ class EditorEnvironment extends Environment implements EditorEnvironmentInterfac
     super();
     this.is_active = true;
     var cell_size = 13;
-    this.renderer = new Renderer('editor-canvas', 'editor-env', false, cell_size);
-    this.controller = new EditorController(this, this.renderer.canvas);
     this.grid_map = new GridMap(15, 15, cell_size);
-    this.organism = null;
+    this.organism = null;    
+    this.renderer = new Renderer('editor-canvas', 'editor-env', false, cell_size);
+    this.controller = new EditorEnvironmentController(this, this.renderer)
     this.setDefaultOrg();
   }
 

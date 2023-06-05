@@ -1,5 +1,31 @@
+import FossilRecord from '../FossilRecord';
+import CanvasJS from '@canvasjs/charts';
+
+type ChartDataPointType = {
+  x: number;
+  y: number;
+}
+
+type ChartDataPointsType = Array<ChartDataPointType>;
+
+type ChartDataObjectType = {
+  type?: string;
+  markerType?: string;
+  color?: string;
+  showInLegend?: boolean;
+  name?: string;
+  legendText?: string;
+  dataPoints: ChartDataPointsType;
+}
+
+type ChartData = Array<ChartDataObjectType>;
+
 class ChartController {
-  constructor(fossil_record, title, y_axis = '', note = '') {
+  fossil_record: FossilRecord;
+  data: ChartData;
+  chart: any;
+
+  constructor(fossil_record: FossilRecord, title: string, y_axis: string = '', note: string = '') {
     this.fossil_record = fossil_record;
     this.data = [];
     this.chart = new CanvasJS.Chart('chartContainer', {
@@ -27,13 +53,17 @@ class ChartController {
 
   setMinimum() {
     var min = 0;
-    if (this.data[0].dataPoints != []) min = this.data[0].dataPoints[0].x;
+    if (this.data.length > 0 && this.data[0].dataPoints.length > 0) {
+      var obj = this.data[0] as ChartDataObjectType;
+      var dataPoints = obj.dataPoints as ChartDataPointsType;
+      min = dataPoints[0].x;
+    }
     this.chart.options.axisX.minimum = min;
   }
 
   addAllDataPoints() {
     for (var i in this.fossil_record.tick_record) {
-      this.addDataPoint(i);
+      this.addDataPoint(parseInt(i));
     }
   }
 
@@ -65,7 +95,7 @@ class ChartController {
     }
   }
 
-  addNewest(to_add) {
+  addNewest(to_add: number) {
     for (let i = to_add; i > 0; i--) {
       let j = this.fossil_record.tick_record.length - i;
       this.addDataPoint(j);
@@ -78,7 +108,7 @@ class ChartController {
     }
   }
 
-  addDataPoint(i) {
+  addDataPoint(i: number) {
     alert('Must override addDataPoint');
   }
 

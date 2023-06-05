@@ -1,23 +1,37 @@
-import CanvasController from './CanvasController';
-import Organism from '../Organism/Organism';
-import ControlModes from './ControlModes';
-import CellStates from '../Grid/GridCellState';
-import Neighbors from '../Grid/Neighbors';
-import WorldConfig from '../WorldConfig';
-import Perlin from '../Utils/Perlin';
-import Environment from '../Environment/Environment';
-import Renderer from '../Rendering/Renderer';
+import EnvironmentController from './EnvironmentController';
+import Organism from '../../Organism/Organism';
+import ControlModes from '../../Interaction/ControlModes';
+import CellStates from '../../Anatomy/CellStates';
+import Neighbors from '../../Grid/Neighbors';
+import WorldConfig from '../../WorldConfig';
+import Perlin from '../../Utils/Perlin';
+import Renderer from '../../Rendering/Renderer';
+import { isWorldEnvironment } from '../../Utils/TypeHelpers';
 
-interface EnvironmentControllerInterface {
+interface WorldEnvironmentControllerInterface {
   mode: number;
   org_to_clone: Organism | null;
   scale: number;
+  defineZoomControls: () => void;
+  resetView: () => void;
+  randomizeWalls: (thickness: number) => void;
+  updateMouseLocation: (offsetX: number, offsetY: number) => void;
+  mouseMove: () => void;
+  mouseDown: () => void;
+  mouseUp: () => void;
+  performModeAction: () => void;
+  dragScreen: () => void;
+  dropOrganism: (organism: Organism, col: number, row: number) => boolean;
+  dropCellType: (col: number, row: number, state: AllCellStatesType, killBlocking: boolean, ignoreState: AnatomyCellStatesType | null) => void;
+  findNearOrganism: () => Organism | null;
+  killNearOrganisms: () => void;
 }
 
-class EnvironmentController extends CanvasController implements EnvironmentControllerInterface {
+class WorldEnvironmentController extends EnvironmentController implements WorldEnvironmentControllerInterface {
   mode: number;
   org_to_clone: Organism | null;
   scale: number;
+  perlin: Perlin;
 
   constructor(env: AnyEnvironmentType, renderer: Renderer) {
     super(env, renderer);
@@ -25,6 +39,7 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
     this.org_to_clone = null;
     this.defineZoomControls();
     this.scale = 1;
+    this.perlin = new Perlin();
   }
 
   defineZoomControls() {
@@ -35,7 +50,7 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
       return;
     }
     const self = this;
-    el.onwheel = function zoom(event: WheelEvent) {
+    el.onwheel = (event: WheelEvent) => {
       event.preventDefault();
 
       if (self.canvas == null) {
@@ -53,7 +68,7 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
       var diff_x =
         (self.canvas.width / 2 - this.mouse_x) * (scale - this.scale);
       var diff_y =
-        (this.canvas.height / 2 - this.mouse_y) * (scale - this.scale);
+        (self.canvas.height / 2 - this.mouse_y) * (scale - this.scale);
 
       $('#env-canvas').css('top', cur_top + diff_y + 'px');
       $('#env-canvas').css('left', cur_left + diff_x + 'px');
@@ -61,7 +76,7 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
       // Apply scale transform
       el.style.transform = `scale(${scale})`;
       this.scale = scale;
-    }.bind(this);
+    };
   }
 
   resetView() {
@@ -74,12 +89,14 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
   /*
     Iterate over grid from 0,0 to env.num_cols,env.num_rows and create random walls using perlin noise to create a more organic shape.
     */
-  randomizeWalls(thickness = 1) {
-    this.env.clearWalls();
+  randomizeWalls(thickness: number = 1) {
+    if (this.env === null || !isWorldEnvironment(this.env)) {
+      return;
+    }
     const noise_threshold = -0.017;
     let avg_noise = 0;
     let resolution = 20;
-    Perlin.seed();
+    this.perlin.reset();
 
     for (let r = 0; r < this.env.num_rows; r++) {
       for (let c = 0; c < this.env.num_cols; c++) {
@@ -91,7 +108,7 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
           (r / this.env.num_rows) *
           ((resolution / this.env.renderer.cell_size) *
             (this.env.num_rows / this.env.num_cols));
-        let noise = Perlin.get(xval, yval);
+        let noise = this.perlin.get(xval, yval);
         avg_noise += noise / (this.env.num_rows * this.env.num_cols);
         if (
           noise > noise_threshold &&
@@ -100,14 +117,14 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
           let cell = this.env.grid_map.cellAt(c, r);
           if (cell != null) {
             if (cell.owner_org != null) cell.owner_org.die();
-            this.env.changeCell(c, r, CellStates.wall, null);
+            this.env.changeCell(c, r, CellStates.wall, this.env.grid_map, null);
           }
         }
       }
     }
   }
 
-  updateMouseLocation(offsetX, offsetY) {
+  updateMouseLocation(offsetX: number, offsetY: number) {
     super.updateMouseLocation(offsetX, offsetY);
   }
 
@@ -124,42 +141,43 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
   mouseUp() {}
 
   performModeAction() {
-    if (WorldConfig.headless && this.mode != Modes.Drag) return;
+    if (WorldConfig.headless && this.mode != ControlModes.Drag) {
+      return;
+    }
     var mode = this.mode;
     var right_click = this.right_click;
     var left_click = this.left_click;
-    if (mode != Modes.None && (right_click || left_click)) {
-      var cell = this.cur_cell;
-      if (cell == null) {
+    if (mode != ControlModes.None && (right_click || left_click)) {
+      if (this.cur_cell === null) {
         return;
       }
       switch (mode) {
-        case Modes.FoodDrop:
+        case ControlModes.FoodDrop:
           if (left_click) {
             this.dropCellType(
-              cell.col,
-              cell.row,
+              this.cur_cell.col,
+              this.cur_cell.row,
               CellStates.food,
               false,
-              CellStates.wall,
+              CellStates.wall
             );
           } else if (right_click) {
             this.dropCellType(
-              cell.col,
-              cell.row,
+              this.cur_cell.col,
+              this.cur_cell.row,
               CellStates.empty,
               false,
               CellStates.wall,
             );
           }
           break;
-        case Modes.WallDrop:
+        case ControlModes.WallDrop:
           if (left_click) {
-            this.dropCellType(cell.col, cell.row, CellStates.wall, true);
+            this.dropCellType(this.cur_cell.col, this.cur_cell.row, CellStates.wall, true);
           } else if (right_click) {
             this.dropCellType(
-              cell.col,
-              cell.row,
+              this.cur_cell.col,
+              this.cur_cell.row,
               CellStates.empty,
               false,
               CellStates.food,
@@ -167,32 +185,34 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
           }
           break;
 
-        case Modes.ClickKill:
+        case ControlModes.ClickKill:
           this.killNearOrganisms();
           break;
 
-        case Modes.Select:
+        case ControlModes.Select:
           if (this.cur_org == null) {
             this.cur_org = this.findNearOrganism();
           }
-          if (this.cur_org != null) {
+          if (
+            this.cur_org != null && 
+            this.control_panel !== null && 
+            this.env !== null
+          ) {
             this.control_panel.setEditorOrganism(this.cur_org);
           }
           break;
 
-        case Modes.Clone:
+        case ControlModes.Clone:
           if (this.org_to_clone != null) {
             this.dropOrganism(this.org_to_clone, this.mouse_c, this.mouse_r);
           }
           break;
-        case Modes.Drag:
+        case ControlModes.Drag:
           this.dragScreen();
-
           break;
       }
     } else if (this.middle_click) {
       //drag on middle click
-
       this.dragScreen();
     }
   }
@@ -206,11 +226,14 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
     $('#env-canvas').css('left', new_left + 'px');
   }
 
-  dropOrganism(organism, col, row) {
+  dropOrganism(organism: Organism, col: number, row: number) {
+    if (this.env === null || !isWorldEnvironment(this.env)) {
+      return false;
+    }
     // close the organism and drop it in the world
     var new_org = new Organism(col, row, this.env, organism);
 
-    if (new_org.isClear(col, row)) {
+    if (new_org.isClear(col, row) && new_org.species !== null) {
       let new_species = !this.env.fossil_record.speciesIsExtant(
         new_org.species.name,
       );
@@ -229,7 +252,10 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
     return false;
   }
 
-  dropCellType(col, row, state, killBlocking = false, ignoreState = null) {
+  dropCellType(col: number, row: number, state: AllCellStatesType, killBlocking: boolean = false, ignoreState: AnatomyCellStatesType | null = null) {
+    if (this.env === null) {
+      return;
+    }    
     for (var loc of Neighbors.inRange(WorldConfig.brush_size)) {
       var c = col + loc[0];
       var r = row + loc[1];
@@ -241,12 +267,17 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
       } else if (cell.owner_org != null) {
         continue;
       }
-      if (ignoreState != null && cell.state == ignoreState) continue;
-      this.env.changeCell(c, r, state, null);
+      if (ignoreState != null && cell.state == ignoreState) {
+        continue;
+      }
+      this.env.changeCell(c, r, state, this.env.grid_map, null);
     }
   }
 
   findNearOrganism() {
+    if (this.env === null || this.cur_cell === null) {
+      return null;
+    }
     let closest = null;
     let closest_dist = 100;
     for (let loc of Neighbors.inRange(WorldConfig.brush_size)) {
@@ -265,6 +296,9 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
   }
 
   killNearOrganisms() {
+    if (this.env === null || this.cur_cell === null) {
+      return null;
+    }    
     for (var loc of Neighbors.inRange(WorldConfig.brush_size)) {
       var c = this.cur_cell.col + loc[0];
       var r = this.cur_cell.row + loc[1];
@@ -274,4 +308,4 @@ class EnvironmentController extends CanvasController implements EnvironmentContr
   }
 }
 
-export default EnvironmentController;
+export default WorldEnvironmentController;

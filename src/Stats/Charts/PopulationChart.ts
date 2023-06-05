@@ -1,8 +1,9 @@
+import FossilRecord from '../FossilRecord';
 import ChartController from './ChartController';
 
-class MutationChart extends ChartController {
-  constructor(fossil_record) {
-    super(fossil_record, 'Mutation Rate');
+class PopulationChart extends ChartController {
+  constructor(fossil_record: FossilRecord) {
+    super(fossil_record, 'Population');
   }
 
   setData() {
@@ -13,17 +14,17 @@ class MutationChart extends ChartController {
       color: 'black',
       showInLegend: true,
       name: 'pop1',
-      legendText: 'Average Mutation Rate',
+      legendText: 'Total Population',
       dataPoints: [],
     });
     this.addAllDataPoints();
   }
 
-  addDataPoint(i) {
+  addDataPoint(i: number) {
     var t = this.fossil_record.tick_record[i];
-    var p = this.fossil_record.av_mut_rates[i];
+    var p = this.fossil_record.pop_counts[i];
     this.data[0].dataPoints.push({ x: t, y: p });
   }
 }
 
-export default MutationChart;
+export default PopulationChart;

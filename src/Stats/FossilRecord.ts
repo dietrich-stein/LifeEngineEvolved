@@ -2,9 +2,7 @@ import WorldEnvironment from '../Environment/WorldEnvironment';
 import CellStates from '../Anatomy/CellStates';
 import SerializeHelper from '../Utils/SerializeHelper';
 import Species from './Species';
-import { NestedKeyOf } from '../Utils/NestedKeyOf';
 import Organism from '../Organism/Organism';
-import Cell from '../Anatomy/Cell';
 
 interface CountArrayInterface {
   [key: string]: number;
@@ -29,7 +27,7 @@ interface FossilRecordInterface {
   species_counts: Array<number>;
   av_mut_rates: Array<number>;
   av_cells: Array<number>;
-  av_cell_counts: Array<number>;  
+  av_cell_counts: AverageCellCountsType;  
   addSpecies: (org: Organism, ancestor: Species) => Species;
   addSpeciesObj: (species: Species) => void;
   decreasePopulation: (species: Species) => void;
@@ -56,7 +54,7 @@ class FossilRecord implements FossilRecordInterface {
   species_counts: Array<number>;
   av_mut_rates: Array<number>;
   av_cells: Array<number>;
-  av_cell_counts: Array<number>;
+  av_cell_counts: AverageCellCountsType;
 
   constructor(env: WorldEnvironment) {
     this.env = env;

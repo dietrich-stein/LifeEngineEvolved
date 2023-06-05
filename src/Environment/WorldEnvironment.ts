@@ -4,7 +4,7 @@ import Renderer from '../Rendering/Renderer';
 import GridMap from '../Grid/GridMap';
 import Organism from '../Organism/Organism';
 import CellStates from '../Anatomy/CellStates';
-import EnvironmentController from '../Controllers/EnvironmentController';
+import EnvironmentController from './Controllers/WorldEnvironmentController';
 import Hyperparams from '../Hyperparams';
 import WorldConfig from '../WorldConfig';
 import SerializeHelper from '../Utils/SerializeHelper';

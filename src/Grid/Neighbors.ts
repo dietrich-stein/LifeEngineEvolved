@@ -1,66 +1,51 @@
-interface NeighborsInterface {
-  //all: number[][];
-  //adjacent: number[][];
-  //corners: number[][];
-  //allSelf: number[][];
-  inRange: (range: number) => number[][];
-}
+abstract class Neighbors {
+  //all       ...
+  //          .x.
+  //          ...  
+  public static all: number[][] = [
+    [0, 1],
+    [0, -1],
+    [1, 0],
+    [-1, 0],
+    [-1, -1],
+    [1, 1],
+    [-1, 1],
+    [1, -1],
+  ];
+  //adjacent   .
+  //          .x.
+  //           .
+  public static adjacent: number[][] = [
+    [0, 1],
+    [0, -1],
+    [1, 0],
+    [-1, 0],
+  ];
+  //corners   . .
+  //           x
+  //          . .  
+  public static corners: number[][] = [
+    [-1, -1],
+    [1, 1],
+    [-1, 1],
+    [1, -1],
+  ];
+  //allSelf   ...
+  //          ...
+  //          ...   
+  public static allSelf: number[][] = [
+    [0, 0],
+    [0, 1],
+    [0, -1],
+    [1, 0],
+    [-1, 0],
+    [-1, -1],
+    [1, 1],
+    [-1, 1],
+    [1, -1],
+  ];
 
-class Neighbors implements NeighborsInterface {
-  public static all: number[][];
-  public static adjacent: number[][];
-  public static corners: number[][];
-  public static allSelf: number[][];
-
-  constructor() {
-    //all       ...
-    //          .x.
-    //          ...  
-    Neighbors.all = [
-      [0, 1],
-      [0, -1],
-      [1, 0],
-      [-1, 0],
-      [-1, -1],
-      [1, 1],
-      [-1, 1],
-      [1, -1],
-    ];
-    //adjacent   .
-    //          .x.
-    //           .  
-    Neighbors.adjacent = [
-      [0, 1],
-      [0, -1],
-      [1, 0],
-      [-1, 0],
-    ];
-    //corners   . .
-    //           x
-    //          . .  
-    Neighbors.corners = [
-      [-1, -1],
-      [1, 1],
-      [-1, 1],
-      [1, -1],
-    ];
-    //allSelf   ...
-    //          ...
-    //          ...  
-    Neighbors.allSelf = [
-      [0, 0],
-      [0, 1],
-      [0, -1],
-      [1, 0],
-      [-1, 0],
-      [-1, -1],
-      [1, 1],
-      [-1, 1],
-      [1, -1],
-    ];
-  }
-
-  inRange(range: number) {
+  public static inRange(range: number) {
     var neighbors = [];
     for (var i = -range; i <= range; i++) {
       for (var j = -range; j <= range; j++) {

@@ -1,5 +1,5 @@
 interface ColorSchemeInterface {
-  [key: string]: string
+  [key: string]: string;
 }
 
 abstract class WorldConfig {

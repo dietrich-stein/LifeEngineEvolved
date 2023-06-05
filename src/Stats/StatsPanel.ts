@@ -2,6 +2,7 @@ import PopulationChart from './Charts/PopulationChart';
 import SpeciesChart from './Charts/SpeciesChart';
 import MutationChart from './Charts/MutationChart';
 import CellsChart from './Charts/CellsChart';
+import Species from './Species';
 
 const ChartSelections = [
   PopulationChart,
@@ -10,12 +11,28 @@ const ChartSelections = [
   MutationChart,
 ];
 
+type ChartControllerType = 
+  | PopulationChart
+  | SpeciesChart
+  | CellsChart
+  | MutationChart
+  | null;
+
 class StatsPanel {
-  constructor(env) {
-    this.defineControls();
-    this.chart_selection = 0;
+  env: WorldEnvironment;
+  chart_controller: ChartControllerType;
+  chart_selection: number;
+  last_reset_count: number;
+  render_loop: number;
+
+  constructor(env: WorldEnvironment) {
     this.env = env;
-    this.last_reset_count = env.reset_count;
+    this.chart_controller = null;
+    this.chart_selection = 0;
+    this.last_reset_count = env.auto_reset_count;
+    this.render_loop = 0;
+
+    this.defineControls();
     this.setChart();
   }
 
@@ -29,12 +46,10 @@ class StatsPanel {
 
   startAutoRender() {
     this.setChart();
-    this.render_loop = setInterval(
-      function () {
-        this.updateChart();
-      }.bind(this),
-      1000,
-    );
+    let self = this;
+    this.render_loop = setInterval(() => {
+      self.updateChart();
+    }, 1000);
   }
 
   stopAutoRender() {
@@ -42,43 +57,45 @@ class StatsPanel {
   }
 
   defineControls() {
-    $('#chart-option').change(
-      function () {
-        this.chart_selection = $('#chart-option')[0].selectedIndex;
-        this.setChart();
-      }.bind(this),
-    );
+    let self = this;
+    $('#chart-option').change((event: JQuery.ChangeEvent) => {
+      self.chart_selection = event.target.selectedIndex;
+      self.setChart();
+    });
   }
 
   updateChart() {
-    if (this.last_reset_count < this.env.reset_count) {
+    if (this.last_reset_count < this.env.auto_reset_count) {
       this.reset();
     }
-    this.last_reset_count = this.env.reset_count;
-    this.chart_controller.updateData();
-    this.chart_controller.render();
+    this.last_reset_count = this.env.auto_reset_count;
+    if (this.chart_controller !== null) {
+      this.chart_controller.updateData();
+      this.chart_controller.render();
+    }
   }
 
   updateDetails() {
     var org_count = this.env.organisms.length;
     $('#org-count').text('Total Population: ' + org_count);
 
-    let top5_by_population = Object.values(
+    let top5_by_population: Array<Species> = Object.values(
       this.env.fossil_record.extant_species,
     );
-    top5_by_population = top5_by_population
+
+    top5_by_population
       .sort((f, s) => {
         return s.population - f.population;
       })
       .slice(0, 5)
       .reduce((c, v) => ({ ...c, [v.name]: v.population }), {});
+
     $('#top-species-population').text(
       'Top 5 Species By Population: ' +
         JSON.stringify(top5_by_population)
           .replace(/[{}]/g, '')
           .replace(/[,]/g, '\n'),
     );
-
     $('#species-count').text(
       'Number of Species: ' + this.env.fossil_record.numExtantSpecies(),
     );

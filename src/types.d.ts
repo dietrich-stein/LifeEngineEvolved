@@ -1,3 +1,5 @@
+declare module '@canvasjs/charts';
+
 type WorldEnvironment = import('./Environment/WorldEnvironment').default;
 type EditorEnvironment = import('./Environment/EditorEnvironment').default;
 type CellStates = import('./Anatomy/CellStates').default;
@@ -45,3 +47,15 @@ type AnatomyCellStatesType =
   | CellStates.killer
   | CellStates.armor 
   | CellStates.eye;
+
+type CellCountsType = {
+  mouth: number;
+  brain: number;
+  producer: number;
+  mover: number;
+  killer: number;
+  armor: number;
+  eye: number;
+}
+
+type AverageCellCountsType = Array<CellCountsType>;

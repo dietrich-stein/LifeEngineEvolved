@@ -5,8 +5,7 @@ abstract class RandomOrganismGenerator {
   private static organismLayers: number = 4;
   private static cellSpawnChance: number = 0.75;
 
-  public static generate(env: WorldEnvironment) {
-    
+  public static generate(env: AnyEnvironmentType) {
     var center = env.grid_map.getCenter();
     var organism = new Organism(center[0], center[1], env);
     organism.anatomy.addDefaultCell(CellStates.mouth, 0, 0, true);

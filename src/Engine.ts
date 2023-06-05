@@ -1,5 +1,5 @@
 import WorldEnvironment from './Environment/WorldEnvironment';
-import ControlPanel from './Controllers/ControlPanel';
+import ControlPanel from './Interaction/ControlPanel';
 import EditorEnvironment from './Environment/EditorEnvironment';
 import ColorSchemeManager from './Rendering/ColorSchemeManager';
 import { GUI, GUIController, controllers } from './Types/dat.gui';

@@ -6,11 +6,13 @@ import LoadController from './LoadController';
 import RandomOrganismGenerator from '../Organism/RandomOrganismGenerator';
 import Species from '../Stats/Species';
 import Engine from '../Engine';
-import EditorController from './EditorController';
-import EnvironmentController from './EnvironmentController';
+import EditorController from '../Environment/Controllers/EditorEnvironmentController';
+import EnvironmentController from '../Environment/Controllers/WorldEnvironmentController';
+import Organism from '../Organism/Organism';
 
 interface ControlPanelInterface {
   engine: Engine;
+  load_controller: LoadController;
   organism_record: number;
   world_env_controller: EnvironmentController;
   editor_env_controller: EditorController;
@@ -18,10 +20,14 @@ interface ControlPanelInterface {
   headless_opacity: number;
   opacity_change_rate: number;
   paused: boolean;
+  control_panel_active: boolean;
+  no_hud: boolean;
+  tab_id: string;
 }
 
 class ControlPanel implements ControlPanelInterface {
   engine: Engine;
+  load_controller: LoadController;  
   organism_record: number;
   world_env_controller: EnvironmentController;
   editor_env_controller: EditorController;
@@ -29,6 +35,9 @@ class ControlPanel implements ControlPanelInterface {
   headless_opacity: number;
   opacity_change_rate: number;
   paused: boolean;
+  control_panel_active: boolean;
+  no_hud: boolean;
+  tab_id: string;
 
   constructor(engine: Engine) {
     this.engine = engine;
@@ -39,6 +48,9 @@ class ControlPanel implements ControlPanelInterface {
     this.headless_opacity = 1;
     this.opacity_change_rate = -0.8;
     this.paused = false;
+    this.control_panel_active = false;
+    this.no_hud = false;
+    this.tab_id = '';
 
     this.world_env_controller.setControlPanel(this);
     this.editor_env_controller.setControlPanel(this);
@@ -52,7 +64,8 @@ class ControlPanel implements ControlPanelInterface {
     this.defineModeControls();
     this.setHyperparamDefaults();
 
-    LoadController.control_panel = this;
+    this.load_controller = new LoadController(this);
+    this.load_controller.init();
   }
 
   toggleHeadless() {
@@ -67,13 +80,12 @@ class ControlPanel implements ControlPanelInterface {
     WorldConfig.headless = !WorldConfig.headless;
   }
 
-  resetWithRandomOrganisms(env, num_organisms) {
+  resetWithRandomOrganisms(env: WorldEnvironment, num_organisms: number) {
     let reset_confirmed = env.resetEnvironment(true, false);
     if (!reset_confirmed) {
       return;
     }
 
-    let numOrganisms = 100; // parseInt($('#num-random-orgs').val()); // Number of random organisms to generate
     let size = Math.ceil(8); // @todo: parameterize and expose
 
     for (let i = 0; i < num_organisms; i++) {
@@ -109,10 +121,16 @@ class ControlPanel implements ControlPanelInterface {
   }
 
   defineHotkeys() {
-    $('body').keydown(e => {
+    $('body').keydown((event: JQuery.KeyDownEvent) => {
       let focused = document.activeElement;
-      if (focused.tagName === 'INPUT' && focused.type === 'text') return;
-      switch (e.key.toLowerCase()) {
+      if (
+        focused !== null && 
+        focused.tagName === 'INPUT' &&
+        focused.getAttribute('type') === 'text'
+      ) {
+        return;
+      }
+      switch (event.key.toLowerCase()) {
         // hot bar controls
         case 'a':
           $('.reset-view')[0].click();
@@ -134,14 +152,17 @@ class ControlPanel implements ControlPanelInterface {
           break;
         case 'j':
         case ' ':
-          e.preventDefault();
+          event.preventDefault();
           $('.pause-button')[0].click();
           break;
         // miscellaneous hotkeys
         case 'q': // minimize/maximize control panel
-          e.preventDefault();
-          if (this.control_panel_active) $('#minimize').click();
-          else $('#maximize').click();
+          event.preventDefault();
+          if (this.control_panel_active) {
+            $('#minimize').click();
+          } else {
+            $('#maximize').click();
+          }
           break;
         case 'z':
           $('#select').click();
@@ -170,7 +191,7 @@ class ControlPanel implements ControlPanelInterface {
             $('.control-panel').css('display', 'none');
             $('.hot-controls').css('display', 'none');
             $('.community-section').css('display', 'none');
-            LoadController.close();
+            this.load_controller.close();
           }
           this.no_hud = !this.no_hud;
           break;
@@ -181,6 +202,8 @@ class ControlPanel implements ControlPanelInterface {
   }
 
   defineEngineSpeedControls() {
+    // @TODO: Needs to be reimplemented for dat.GUI anyway
+    /*
     this.slider = document.getElementById('slider');
     this.slider.oninput = function () {
       const max_fps = 300;
@@ -192,11 +215,12 @@ class ControlPanel implements ControlPanelInterface {
       let text = this.fps >= max_fps ? 'MAX' : this.fps;
       $('#fps').text('Target FPS: ' + text);
     }.bind(this);
-
+    */
+    let self = this;
     $('.pause-button').click(
       function () {
         // toggle pause
-        this.setPaused(this.engine.running);
+        self.setPaused(self.engine.running);
       }.bind(this),
     );
   }
@@ -215,15 +239,15 @@ class ControlPanel implements ControlPanelInterface {
       if (this.id === 'stats') {
         self.stats_panel.startAutoRender();
       } else if (this.id === 'editor') {
-        self.editor_controller.refreshDetailsPanel();
+        self.editor_env_controller.refreshDetailsPanel();
       }
       self.tab_id = this.id;
     });
   }
 
   defineWorldControls() {
-    $('#clear-walls-reset').change(function () {
-      WorldConfig.clear_walls_on_reset = this.checked;
+    $('#clear-walls-reset').change((event: JQuery.ChangeEvent) => {
+      WorldConfig.clear_walls_on_reset = event.target.checked;
     });
     $('#reset-with-editor-org').click(() => {
       let env = this.engine.env;
@@ -245,9 +269,12 @@ class ControlPanel implements ControlPanelInterface {
         }
       }
       let center = env.grid_map.getCenter();
-      let org = this.editor_controller.env.getCopyOfOrg();
-      if (org !== null) {
-        this.env_controller.dropOrganism(org, center[0], center[1]);
+      let editor_env = this.editor_env_controller.env;
+      if (editor_env !== null) {
+        let org = (editor_env as EditorEnvironment).getCopyOfOrg();
+        if (org !== null) {
+          this.world_env_controller.dropOrganism(org, center[0], center[1]);
+        }
       }
     });
     $('#save-env').click(() => {
@@ -258,147 +285,216 @@ class ControlPanel implements ControlPanelInterface {
         'data:text/json;charset=utf-8,' +
         encodeURIComponent(JSON.stringify(env));
       let downloadEl = document.getElementById('download-el');
-      downloadEl.setAttribute('href', data);
-      downloadEl.setAttribute('download', $('#save-env-name').val() + '.json');
-      downloadEl.click();
-      if (was_running) this.setPaused(false);
+      if (downloadEl !== null) {
+        downloadEl.setAttribute('href', data);
+        downloadEl.setAttribute('download', $('#save-env-name').val() + '.json');
+        downloadEl.click();
+      }
+      if (was_running) {
+        this.setPaused(false);
+      }
     });
     $('#load-env').click(() => {
-      LoadController.loadJson(env => {
+      this.load_controller.loadJson((env: any) => {
         this.loadEnv(env);
       });
     });
-    $('#upload-env').change(e => {
-      let files = e.target.files;
-      if (!files.length) {
+    $('#upload-env').change((event: JQuery.ChangeEvent) => {
+      let files: FileList | null = (event.target as HTMLInputElement).files;
+      if (files === null || !files.length) {
         return;
       }
       let reader = new FileReader();
-      reader.onload = e => {
+      reader.onload = (ev: ProgressEvent) => {
         try {
-          let env = JSON.parse(e.target.result);
-          this.loadEnv(env);
-        } catch (except) {
-          console.error(except);
+          if (ev.target !== null) {
+            let result = (<FileReader>ev.target).result;
+            if (typeof result === 'string') {
+              let env = JSON.parse(result);
+              this.loadEnv(env);              
+            } else {
+              alert('Failed to load world');              
+            }
+          }          
+        } catch (err) {
+          console.error(err);
           alert('Failed to load world');
         }
-        $('#upload-env')[0].value = '';
+        let els = $('#upload-env');
+        if (els.length > 0) {
+          let input = els[0];
+          (input as HTMLInputElement).value = '';
+        }        
       };
       reader.readAsText(files[0]);
     });
   }
 
-  loadEnv(env) {
-    if (this.tab_id == 'stats') this.stats_panel.stopAutoRender();
+  loadEnv(env: WorldEnvironment) {
+    if (this.tab_id == 'stats') {
+      this.stats_panel.stopAutoRender();
+    }
     let was_running = this.engine.running;
     this.setPaused(true);
     this.engine.env.loadRaw(env);
-    if (was_running) this.setPaused(false);
+    if (was_running) {
+      this.setPaused(false);
+    }
     this.updateHyperparamUIValues();
-    this.env_controller.resetView();
-    if (this.tab_id == 'stats') this.stats_panel.startAutoRender();
+    this.world_env_controller.resetView();
+    if (this.tab_id == 'stats') {
+      this.stats_panel.startAutoRender();
+    }
   }
 
   defineHyperparameterControls() {
-    $('#food-prod-prob').change(
-      function () {
-        Hyperparams.foodProdProb = $('#food-prod-prob').val();
-      }.bind(this),
-    );
-    $('#lifespan-multiplier').change(
-      function () {
-        Hyperparams.lifespanMultiplier = $('#lifespan-multiplier').val();
-      }.bind(this),
-    );
-
-    $('#rot-enabled').change(function () {
-      Hyperparams.rotationEnabled = this.checked;
+    let self = this;
+    $('#food-prod-prob').change((event: JQuery.ChangeEvent) => {
+      let val = event.target.value;
+      val = (typeof val === 'number') 
+        ? val 
+        : (typeof val === 'string')
+          ? parseInt(val)
+          : 0;
+      Hyperparams.foodProdProb = val;
     });
-    $('#insta-kill').change(function () {
-      Hyperparams.instaKill = this.checked;
+    $('#lifespan-multiplier').change((event: JQuery.ChangeEvent) => {
+      let val = event.target.value;
+      val = (typeof val === 'number') 
+        ? val 
+        : (typeof val === 'string')
+          ? parseInt(val)
+          : 0;
+      Hyperparams.lifespanMultiplier = val;
     });
-    $('#look-range').change(function () {
-      Hyperparams.lookRange = $('#look-range').val();
+    $('#rot-enabled').change((event: JQuery.ChangeEvent) => {
+      Hyperparams.rotationEnabled = event.target.checked;
     });
-    $('#see-through-self').change(function () {
-      Hyperparams.seeThroughSelf = this.checked;
+    $('#insta-kill').change((event: JQuery.ChangeEvent) => {
+      Hyperparams.instaKill = event.target.checked;
     });
-    $('#food-drop-rate').change(function () {
-      Hyperparams.foodDropProb = $('#food-drop-rate').val();
+    $('#look-range').change((event: JQuery.ChangeEvent) => {
+      let val = event.target.value;
+      val = (typeof val === 'number') 
+        ? val 
+        : (typeof val === 'string')
+          ? parseInt(val)
+          : 0;      
+      Hyperparams.lookRange = val;
     });
-    $('#extra-mover-cost').change(function () {
-      Hyperparams.extraMoverFoodCost = parseInt($('#extra-mover-cost').val());
+    $('#see-through-self').change((event: JQuery.ChangeEvent) => {
+      Hyperparams.seeThroughSelf = event.target.checked;
     });
-
-    $('#evolved-mutation').change(function () {
-      if (this.checked) {
+    $('#food-drop-rate').change((event: JQuery.ChangeEvent) => {
+      let val = event.target.value;
+      val = (typeof val === 'number') 
+        ? val 
+        : (typeof val === 'string')
+          ? parseInt(val)
+          : 0;
+      Hyperparams.foodDropProb = val;
+    });
+    $('#extra-mover-cost').change((event: JQuery.ChangeEvent) => {
+      let val = event.target.value;
+      val = (typeof val === 'number') 
+        ? val 
+        : (typeof val === 'string')
+          ? parseInt(val)
+          : 0;
+      Hyperparams.extraMoverFoodCost = val;
+    });
+    $('#evolved-mutation').change((event: JQuery.ChangeEvent) => {
+      if (event.target.checked) {
         $('.global-mutation-in').css('display', 'none');
         $('#avg-mut').css('display', 'block');
       } else {
         $('.global-mutation-in').css('display', 'block');
         $('#avg-mut').css('display', 'none');
       }
-      Hyperparams.useGlobalMutability = !this.checked;
+      Hyperparams.useGlobalMutability = !event.target.checked;
     });
-    $('#global-mutation').change(function () {
-      Hyperparams.globalMutability = parseInt($('#global-mutation').val());
+    $('#global-mutation').change((event: JQuery.ChangeEvent) => {
+      let val = event.target.value;
+      val = (typeof val === 'number') 
+        ? val 
+        : (typeof val === 'string')
+          ? parseInt(val)
+          : 0;      
+      Hyperparams.globalMutability = val;
     });
-    $('.mut-prob').change(function () {
-      switch (this.id) {
+    $('.mut-prob').change((event: JQuery.ChangeEvent) => {
+      let id = event.target.getAttribute('id');
+      let val = parseInt((event.target as HTMLInputElement).value);
+      switch (id) {
         case 'add-prob':
-          Hyperparams.addProb = this.value;
+          Hyperparams.addProb = val;
           break;
         case 'change-prob':
-          Hyperparams.changeProb = this.value;
+          Hyperparams.changeProb = val;
           break;
         case 'remove-prob':
-          Hyperparams.removeProb = this.value;
+          Hyperparams.removeProb = val;
           break;
       }
       $('#add-prob').val(Math.floor(Hyperparams.addProb));
       $('#change-prob').val(Math.floor(Hyperparams.changeProb));
       $('#remove-prob').val(Math.floor(Hyperparams.removeProb));
     });
-    $('#movers-produce').change(function () {
-      Hyperparams.moversCanProduce = this.checked;
+    $('#movers-produce').change((event: JQuery.ChangeEvent) => {
+      Hyperparams.moversCanProduce = event.target.checked;
     });
-    $('#food-blocks').change(function () {
-      Hyperparams.foodBlocksReproduction = this.checked;
+    $('#food-blocks').change((event: JQuery.ChangeEvent) => {
+      Hyperparams.foodBlocksReproduction = event.target.checked;
     });
     $('#reset-rules').click(() => {
-      this.setHyperparamDefaults();
+      self.setHyperparamDefaults();
     });
     $('#save-controls').click(() => {
       let data =
         'data:text/json;charset=utf-8,' +
         encodeURIComponent(JSON.stringify(Hyperparams));
       let downloadEl = document.getElementById('download-el');
-      downloadEl.setAttribute('href', data);
-      downloadEl.setAttribute('download', 'controls.json');
-      downloadEl.click();
+      if (downloadEl !== null) {
+        downloadEl.setAttribute('href', data);
+        downloadEl.setAttribute('download', 'controls.json');
+        downloadEl.click();
+      }
     });
     $('#load-controls').click(() => {
       $('#upload-hyperparams').click();
     });
-    $('#upload-hyperparams').change(e => {
-      let files = e.target.files;
-      if (!files.length) {
+    $('#upload-hyperparams').change((event: JQuery.ChangeEvent) => {
+      let uploadInput = (event.target as HTMLInputElement)
+      let files: FileList | null = uploadInput.files;
+      if (files === null || !files.length) {
         return;
       }
       let reader = new FileReader();
-      reader.onload = e => {
-        let result = JSON.parse(e.target.result);
-        Hyperparams.loadJsonObj(result);
-        this.updateHyperparamUIValues();
-        // have to clear the value so change() will be triggered if the same file is uploaded again
-        $('#upload-hyperparams')[0].value = '';
+      reader.onload = (ev: ProgressEvent) => {
+        try {
+          if (ev.target !== null) {
+            let result = (<FileReader>ev.target).result;
+            if (typeof result === 'string') {
+              let json = JSON.parse(result);
+              Hyperparams.loadJsonObj(json);
+              this.updateHyperparamUIValues();
+              // have to clear the value so change() will be triggered if the same file is uploaded again
+              uploadInput.value = '';              
+            } else {
+              alert('Failed to load');              
+            }
+          }
+          self.load_controller.close(); // why?
+        } catch (err) {
+          console.error(err);
+          alert('Failed to load');
+        }        
       };
       reader.readAsText(files[0]);
     });
   }
 
   setHyperparamDefaults() {
-    Hyperparams.setDefaults();
     this.updateHyperparamUIValues();
   }
 
@@ -430,10 +526,11 @@ class ControlPanel implements ControlPanelInterface {
 
   defineModeControls() {
     var self = this;
+    var engine_env = this.engine.env;    
     $('.edit-mode-btn').click(function () {
       $('#cell-selections').css('display', 'none');
       $('#organism-options').css('display', 'none');
-      self.editor_controller.setDetailsPanel();
+      self.editor_env_controller.setDetailsPanel();
       switch (this.id) {
         case 'food-drop':
           self.setMode(Modes.FoodDrop);
@@ -459,52 +556,36 @@ class ControlPanel implements ControlPanelInterface {
       $('.edit-mode-btn').removeClass('selected');
       $('.' + this.id).addClass('selected');
     });
-    $('.reset-view').click(
-      function () {
-        this.env_controller.resetView();
-      }.bind(this),
-    );
-
-    var env = this.engine.env;
-    $('#reset-env').click(
-      function () {
-        if (env.resetEnvironment()) {
-          this.stats_panel.reset();
-        }
-      }.bind(this),
-    );
-
+    $('.reset-view').click(() => {
+      self.world_env_controller.resetView();
+    });
+    $('#reset-env').click(() => {
+      if (engine_env.resetEnvironment()) {
+        self.stats_panel.reset();
+      }
+    });
     $('#clear-env').click(() => {
-      if (env.resetEnvironment(true, false)) {
+      if (engine_env.resetEnvironment(true, false)) {
         this.stats_panel.reset();
       }
     });
-
-    $('#brush-slider').on('input change', function () {
-      WorldConfig.brush_size = this.value;
+    $('#brush-slider').on('input change', (event: JQuery.ChangeEvent | any) => {
+      WorldConfig.brush_size = parseInt(event.target.value);
     });
-    $('#random-walls').click(
-      function () {
-        this.env_controller.randomizeWalls();
-      }.bind(this),
-    );
-    $('#clear-walls').click(
-      function () {
-        this.engine.env.clearWalls();
-      }.bind(this),
-    );
-    $('#clear-editor').click(
-      function () {
-        this.engine.organism_editor.setDefaultOrg();
-        this.editor_controller.setEditorPanel();
-      }.bind(this),
-    );
-    $('#generate-random').click(
-      function () {
-        this.engine.organism_editor.createRandom();
-        this.editor_controller.refreshDetailsPanel();
-      }.bind(this),
-    );
+    $('#random-walls').click(() => {
+      this.world_env_controller.randomizeWalls();
+    });
+    $('#clear-walls').click(() => {
+      engine_env.clearWalls();
+    });
+    $('#clear-editor').click(() => {
+      this.engine.organism_editor.setDefaultOrg();
+      this.editor_env_controller.setEditorPanel();
+    });
+    $('#generate-random').click(() => {
+      this.engine.organism_editor.createRandom();
+      this.editor_env_controller.refreshDetailsPanel();
+    });
 
     window.onbeforeunload = function (e) {
       e = e || window.event;
@@ -516,44 +597,48 @@ class ControlPanel implements ControlPanelInterface {
     };
   }
 
-  setPaused(paused) {
+  setPaused(paused: boolean) {
     if (paused) {
       $('.pause-button').find('i').removeClass('fa-pause');
       $('.pause-button').find('i').addClass('fa-play');
-      if (this.engine.running) this.engine.stop();
+      if (this.engine.running) {
+        this.engine.stop();
+      }
     } else if (!paused) {
       $('.pause-button').find('i').addClass('fa-pause');
       $('.pause-button').find('i').removeClass('fa-play');
-      if (!this.engine.running) this.engine.start(this.fps);
+      if (!this.engine.running) {
+        this.engine.start();
+      }
     }
   }
 
-  setMode(mode) {
-    this.env_controller.mode = mode;
-    this.editor_controller.mode = mode;
+  setMode(mode: number) {
+    this.world_env_controller.mode = mode;
+    this.editor_env_controller.mode = mode;
 
     if (mode == Modes.Edit) {
-      this.editor_controller.setEditorPanel();
+      this.editor_env_controller.setEditorPanel();
     }
 
     if (mode == Modes.Clone) {
-      this.env_controller.org_to_clone =
+      this.world_env_controller.org_to_clone =
         this.engine.organism_editor.getCopyOfOrg();
     }
   }
 
-  setEditorOrganism(org) {
+  setEditorOrganism(org: Organism) {
     this.engine.organism_editor.setOrganismToCopyOf(org);
-    this.editor_controller.clearDetailsPanel();
-    this.editor_controller.setDetailsPanel();
+    this.editor_env_controller.clearDetailsPanel();
+    this.editor_env_controller.setDetailsPanel();
   }
 
-  changeEngineSpeed(change_val) {
-    this.engine.restart(change_val);
-    this.fps = this.engine.fps;
+  // @todo: fix
+  changeEngineSpeed(change_val: number) {
+    this.engine.restart();
   }
 
-  updateHeadlessIcon(delta_time) {
+  updateHeadlessIcon(delta_time: number) {
     if (!this.engine.running) return;
     const min_opacity = 0.4;
     var op =
@@ -569,7 +654,7 @@ class ControlPanel implements ControlPanelInterface {
     $('#headless-notification').css('opacity', op * 100 + '%');
   }
 
-  update(delta_time) {
+  update(delta_time: number) {
     $('#reset-count').text(
       'Auto reset count: ' + this.engine.env.auto_reset_count,
     );
