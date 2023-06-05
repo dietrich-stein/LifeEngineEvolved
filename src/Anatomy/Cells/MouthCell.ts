@@ -9,6 +9,19 @@ class MouthCell extends Cell {
     super(CellStates.mouth, org, loc_col, loc_row);
   }
 
+  initInherit(parent: Cell) {
+    // deep copy parent values
+    super.initInherit(parent);
+  }
+
+  initRandom() {
+    // initialize values randomly
+  }
+
+  initDefault() {
+    // initialize to default values
+  }
+
   performFunction() {
     var env = this.org.env;
     if (env === null) {

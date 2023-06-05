@@ -144,7 +144,7 @@ export class GUIController<T extends object = object> {
   fire(): GUIController;
 }
 
-export static const controllers = {
+/*export static const controllers = {
   Controller: any, //Controller;
   BooleanController: any, //BooleanController;
   OptionController: any, //OptionController;
@@ -154,4 +154,4 @@ export static const controllers = {
   NumberControllerSlider: any, //NumberControllerSlider;
   FunctionController: any, //FunctionController;
   ColorController: any, //ColorController;
-};
+}*/

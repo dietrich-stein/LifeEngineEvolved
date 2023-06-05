@@ -1,7 +1,11 @@
+declare module 'dat.gui';
 declare module '@canvasjs/charts';
+
+type GUI = import('./dat.gui').GUI;
 
 type WorldEnvironment = import('./Environment/WorldEnvironment').default;
 type EditorEnvironment = import('./Environment/EditorEnvironment').default;
+
 type CellStates = import('./Anatomy/CellStates').default;
 type EmptyState = import('./Anatomy/CellStates').EmptyState;
 type FoodState = import('./Anatomy/CellStates').FoodState;
@@ -13,6 +17,14 @@ type MoverState = import('./Anatomy/CellStates').MoverState;
 type KillerState = import('./Anatomy/CellStates').KillerState;
 type ArmorState = import('./Anatomy/CellStates').ArmorState;
 type EyeState = import('./Anatomy/CellStates').EyeState;
+
+type MouthCellClassType = import('./Anatomy/Cells/MouthCell').default;
+type BrainCellClassType = import('./Anatomy/Cells/BrainCell').default;
+type ProducerCellClassType = import('./Anatomy/Cells/ProducerCell').default;
+type MoverCellClassType = import('./Anatomy/Cells/MoverCell').default;
+type KillerCellClassType = import('./Anatomy/Cells/KillerCell').default;
+type ArmorCellClassType = import('./Anatomy/Cells/ArmorCell').default;
+type EyeCellClassType = import('./Anatomy/Cells/EyeCell').default;
 
 type AnyEnvironmentType = 
   | WorldEnvironment 
@@ -47,6 +59,15 @@ type AnatomyCellStatesType =
   | CellStates.killer
   | CellStates.armor 
   | CellStates.eye;
+
+type AnatomyCellClassType = 
+  | MouthCellClassType
+  | BrainCellClassType
+  | ProducerCellClassType
+  | MoverCellClassType
+  | KillerCellClassType
+  | ArmorCellClassType
+  | EyeCellClassType;  
 
 type CellCountsType = {
   mouth: number;

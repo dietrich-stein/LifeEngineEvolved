@@ -2,13 +2,15 @@ import WorldEnvironment from './Environment/WorldEnvironment';
 import ControlPanel from './Interaction/ControlPanel';
 import EditorEnvironment from './Environment/EditorEnvironment';
 import ColorSchemeManager from './Rendering/ColorSchemeManager';
-import { GUI, GUIController, controllers } from './Types/dat.gui';
 import Stats from '@dietrich-stein/stats.js';
 import WorldConfig from './WorldConfig';
+import * as dat from 'dat.gui';
 
 // If the simulation speed is below this value, a new interval will be created to handle ui rendering
 // at a reasonable speed. If it is above, the simulation interval will be used to update the ui.
 const min_render_speed = 60;
+
+type GUIType = GUI;
 
 class Engine {
   env: WorldEnvironment;
@@ -20,8 +22,8 @@ class Engine {
   ui_last_update: number;
   ui_delta_time: number;
   running: boolean;
-  sim_loop: number;  
-  gui: GUI;
+  sim_loop: ReturnType<typeof setInterval> | null;  
+  gui: GUIType;
   stats: Stats;
 
   constructor() {
@@ -44,10 +46,10 @@ class Engine {
     this.ui_delta_time = 0;
 
     this.running = false;
-    this.sim_loop = 0;
+    this.sim_loop = null;
 
     // https://github.com/dataarts/dat.gui/blob/master/API.md
-    this.gui = new GUI({
+    this.gui = new dat.GUI({
       autoPlace: true,
       width: 300,
       hideable: false
@@ -313,7 +315,7 @@ class Engine {
   }
 
   stop() {
-    clearInterval(this.sim_loop);
+    clearInterval(this.sim_loop as ReturnType<typeof setInterval>);
     this.running = false;
   }
 

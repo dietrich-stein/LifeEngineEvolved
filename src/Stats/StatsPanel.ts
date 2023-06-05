@@ -23,14 +23,14 @@ class StatsPanel {
   chart_controller: ChartControllerType;
   chart_selection: number;
   last_reset_count: number;
-  render_loop: number;
+  render_loop: ReturnType<typeof setInterval> | null;
 
   constructor(env: WorldEnvironment) {
     this.env = env;
     this.chart_controller = null;
     this.chart_selection = 0;
     this.last_reset_count = env.auto_reset_count;
-    this.render_loop = 0;
+    this.render_loop = null;
 
     this.defineControls();
     this.setChart();
@@ -53,7 +53,7 @@ class StatsPanel {
   }
 
   stopAutoRender() {
-    clearInterval(this.render_loop);
+    clearInterval(this.render_loop as ReturnType<typeof setInterval>);
   }
 
   defineControls() {

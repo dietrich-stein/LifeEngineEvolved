@@ -14,7 +14,7 @@ class EyeCell extends Cell {
     this.direction = Directions.cardinals.n;
   }
 
-  initInherit(parent: EyeCell) {
+  initInherit(parent: any) {
     // deep copy parent values
     super.initInherit(parent);
     this.direction = parent.direction;

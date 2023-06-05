@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest --silent=false",
     "test-coverage": "jest --collect-coverage",
-    "build": "webpack --mode=production",
-    "build-dev": "webpack --mode=development",
-    "build-watch": "webpack --watch --mode=development",
+    "build": "webpack --config ./webpack.config.ts --mode=production",
+    "build-dev": "webpack --config ./webpack.config.ts --mode=development",
+    "build-watch": "webpack --config ./webpack.config.ts --watch --mode=development",
     "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
     "serve": "http-server ./dist"
   },
@@ -26,6 +26,8 @@
   "devDependencies": {
     "@types/canvasjs": "^1.9.8",
     "@types/jquery": "^3.5.16",
+    "@types/node": "^20.2.5",
+    "@types/webpack": "^5.28.1",
     "eslint": "^8.41.0",
     "http-server": "^14.1.1",
     "prettier": "^2.8.8",

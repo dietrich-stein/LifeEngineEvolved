@@ -136,7 +136,6 @@ class WorldEnvironment extends Environment implements WorldEnvironmentInterface 
     for (var i in this.organisms) {
       var org = this.organisms[i];
       if (!org.living || !org.update()) {
-        debugger; // what is i really?
         to_remove.push(i);
       }
     }
@@ -166,9 +165,8 @@ class WorldEnvironment extends Environment implements WorldEnvironmentInterface 
   removeOrganisms(org_indeces: Array<string>) {
     let start_pop = this.organisms.length;
     for (var i of org_indeces.reverse()) {
-      //@todo: uncomment this once i is known: this.total_mutability -= this.organisms[i].mutability;
-      debugger; // now what is i?
-      console.log(i); //this.organisms.splice(i, 1);
+      this.total_mutability -= this.organisms[parseInt(i)].mutability;
+      this.organisms.splice(parseInt(i), 1);
     }
     if (this.organisms.length === 0 && start_pop > 0) {
       if (this.auto_reset) {
@@ -244,7 +242,9 @@ class WorldEnvironment extends Environment implements WorldEnvironmentInterface 
     let to_remove = [];
     for (let i in this.organisms) {
       let org = this.organisms[i];
-      if (!org.living) to_remove.push(i);
+      if (!org.living) {
+        to_remove.push(i);
+      }
     }
     this.removeOrganisms(to_remove);
   }

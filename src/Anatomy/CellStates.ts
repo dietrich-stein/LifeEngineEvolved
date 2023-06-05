@@ -93,7 +93,7 @@ abstract class CellStates {
   public static producer: ProducerState = new ProducerState();
   public static mover: MoverState = new MoverState();
   public static killer: KillerState = new KillerState();
-  public static armor: ArmorState= new ArmorState();
+  public static armor: ArmorState = new ArmorState();
   public static eye: EyeState = new EyeState();
 
   public static all: Array<AllCellStatesType> = [

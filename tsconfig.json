@@ -3,6 +3,10 @@
   "display": "Node 14",
   "exclude": [],
   "compilerOptions": {
+    "types": [
+      "node"
+      //"./src/dat.gui.d.ts"
+    ],
     "lib": [
       "dom",
       "es2017"
@@ -13,7 +17,8 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "baseUrl": "types",
-    "typeRoots": ["types"],
+    //"typeRoots": ["types"],
+    //"typeRoots": ["../node_modules/@types"],
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
