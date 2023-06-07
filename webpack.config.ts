@@ -39,7 +39,7 @@ const useBabelInDevelopment = false;
  * specify paths to SCSS or SASS files, and they will be compiled automatically.
  */
 const stylesheets = [
-	'./src/styles/index.css'
+	'./src/styles/index.scss'
 ];
 
 /**
@@ -166,9 +166,9 @@ const config: MergedConfiguration = {
     ],
   },  
   plugins: [
-    /*new webpack.ProvidePlugin({
+    new Webpack.ProvidePlugin({
       $: 'jquery',
-    }),*/
+    }),
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),

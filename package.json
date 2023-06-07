@@ -48,6 +48,7 @@
     "svelte": "^3.59.1",
     "svelte-check": "^3.4.3",
     "svelte-check-plugin": "^1.0.4",
+    "svelte-grid": "^5.1.1",
     "svelte-loader": "^3.1.8",
     "svelte-preprocess": "^5.0.4",
     "ts-loader": "^9.4.2",
@@ -63,7 +64,8 @@
     "@dietrich-stein/stats.js": "git+https://github.com/dietrich-stein/stats.js.git",
     "dat.gui": "^0.7.9",
     "jquery": "^3.7.0",
-    "serve": "^14.2.0"
+    "serve": "^14.2.0",
+    "svrollbar": "^0.12.0"
   },
   "browserslist": [
     "defaults"

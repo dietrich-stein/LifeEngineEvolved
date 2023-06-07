@@ -39,7 +39,7 @@ class EditorEnvironment extends Environment implements EditorEnvironmentInterfac
     var cell_size = 13;
     this.grid_map = new GridMap(15, 15, cell_size);
     this.organism = null;    
-    this.renderer = new Renderer('editor-canvas', 'editor-env', false, cell_size);
+    this.renderer = new Renderer('env-editor-canvas', 'env-editor', false, cell_size);
     this.controller = new EditorEnvironmentController(this, this.renderer)
     this.setDefaultOrg();
   }

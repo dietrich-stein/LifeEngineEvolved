@@ -28,7 +28,7 @@ class ChartController {
   constructor(fossil_record: FossilRecord, title: string, y_axis: string = '', note: string = '') {
     this.fossil_record = fossil_record;
     this.data = [];
-    this.chart = new CanvasJS.Chart('chartContainer', {
+    this.chart = null;/*new CanvasJS.Chart('chartContainer', {
       zoomEnabled: true,
       title: {
         text: title,
@@ -44,7 +44,7 @@ class ChartController {
       data: this.data,
     });
     this.chart.render();
-    $('#chart-note').text(note);
+    $('#chart-note').text(note);*/
   }
 
   setData() {

@@ -105,8 +105,8 @@ class WorldEnvironment extends Environment implements WorldEnvironmentInterface 
 
     // For fill, the constructor resizes the canvas and updates the rows/cols
     this.renderer = new Renderer(
-      'env-canvas',
-      'env',
+      'env-world-canvas',
+      'env-world',
       this.fill_window,
       this.cell_size,
     );
@@ -356,7 +356,7 @@ class WorldEnvironment extends Environment implements WorldEnvironmentInterface 
   resizeFillWindow(cell_size: number) {
     this.renderer.fill_window = true;
     this.renderer.cell_size = cell_size;
-    this.renderer.fillWindow('env');
+    this.renderer.fillWindow('env-world');
     this.num_cols = this.renderer.num_cols = Math.ceil(
       this.renderer.width / cell_size,
     );

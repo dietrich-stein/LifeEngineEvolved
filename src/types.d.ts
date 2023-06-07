@@ -1,6 +1,8 @@
 declare module 'dat.gui';
 declare module '@canvasjs/charts';
-
+declare module 'svelte-grid/build/helper/index.mjs';
+declare module 'svelte-grid';
+declare module 'svrollbar';
 type GUI = import('./dat.gui').GUI;
 
 type WorldEnvironment = import('./Environment/WorldEnvironment').default;

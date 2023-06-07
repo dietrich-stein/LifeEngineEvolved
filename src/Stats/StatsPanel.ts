@@ -31,9 +31,10 @@ class StatsPanel {
     this.chart_selection = 0;
     this.last_reset_count = env.auto_reset_count;
     this.render_loop = null;
-
+    /*
     this.defineControls();
     this.setChart();
+    */
   }
 
   setChart(selection = this.chart_selection) {
